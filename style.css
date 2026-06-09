@@ -55,7 +55,7 @@ img { max-width: 100%; display: block; }
   height: 68px;
 }
 .logo { display: flex; align-items: center; gap: 12px; }
-.logo img { height: 44px; width: 44px; object-fit: contain; }
+.logo img { height: 50px; width: 50px; object-fit: cover; border-radius: 50%; }
 .logo-title { display: block; font-size: 17px; font-weight: 700; color: var(--blue); line-height: 1.2; }
 .logo-sub   { display: block; font-size: 11px; color: var(--gray); }
 
@@ -75,37 +75,162 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
   font-size: 22px; cursor: pointer; color: var(--dark);
 }
 
-/* ===== HERO ===== */
+/* ===== CSC BANNER / HERO ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: flex; align-items: center;
-  background: linear-gradient(135deg, #0f2c82 0%, #1a56db 50%, #0ea5e9 100%);
-  padding: 100px 0 60px;
+  background: linear-gradient(160deg, #0a1f6e 0%, #1a3fad 45%, #0e2d8f 100%);
+  padding-top: 68px;
+  overflow: hidden;
 }
-.hero-overlay {
+.hero::before {
+  content: '';
   position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(255,153,0,.12) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1.2' fill='rgba(255,255,255,.07)'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
-.hero-content { position: relative; z-index: 1; color: var(--white); max-width: 680px; }
-.hero-badge {
-  display: inline-block;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.35);
-  border-radius: 50px;
-  padding: 6px 18px;
-  font-size: 13px; font-weight: 600;
-  letter-spacing: .5px;
+
+/* Gov top bar */
+.gov-bar {
+  background: rgba(0,0,0,.35);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.gov-bar-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 6px;
+  font-size: 12px; color: rgba(255,255,255,.8);
+}
+
+/* Main banner layout */
+.banner-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 20px 40px;
+  position: relative; z-index: 1;
+}
+
+/* Left panel */
+.banner-logos { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+
+.digital-india-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 10px; padding: 10px 16px;
+}
+.di-icon { font-size: 28px; }
+.di-title { display: block; font-size: 16px; font-weight: 700; color: #fff; }
+.di-sub   { display: block; font-size: 11px; color: rgba(255,255,255,.7); }
+
+.csc-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,153,0,.15);
+  border: 1px solid rgba(255,153,0,.35);
+  border-radius: 10px; padding: 10px 16px;
+}
+.csc-abbr {
+  font-size: 26px; font-weight: 900;
+  color: #ff9900; letter-spacing: 2px;
+}
+.csc-full { display: block; font-size: 14px; font-weight: 700; color: #fff; }
+.csc-sub  { display: block; font-size: 11px; color: rgba(255,255,255,.65); }
+
+.banner-title-block { margin-bottom: 16px; }
+.banner-heading {
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,.3);
+}
+.banner-op-name {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 700;
+  color: #ff9900;
+  margin-top: 6px;
+}
+.banner-location { font-size: 15px; color: rgba(255,255,255,.75); margin-top: 6px; }
+
+.banner-tagline {
+  font-size: 14px; font-style: italic;
+  color: rgba(255,255,255,.7);
+  border-left: 3px solid #ff9900;
+  padding-left: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Right panel */
+.banner-right {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 16px;
+  padding: 28px 24px;
+  backdrop-filter: blur(6px);
+}
+.banner-services-title {
+  text-align: center;
+  font-size: 14px; font-weight: 700;
+  color: #ff9900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 20px;
 }
-.hero-content h1 {
-  font-size: clamp(36px, 5vw, 62px);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 18px;
+.banner-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
 }
-.hero-sub { font-size: 17px; opacity: .88; margin-bottom: 36px; }
-.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.bicon {
+  background: rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: background .2s, transform .2s;
+  cursor: default;
+}
+.bicon:hover { background: rgba(255,153,0,.25); transform: translateY(-2px); }
+.bicon span { font-size: 24px; display: block; margin-bottom: 5px; }
+.bicon p { font-size: 11px; color: rgba(255,255,255,.85); font-weight: 500; }
+
+.banner-helpline {
+  text-align: center;
+  background: rgba(37,211,102,.15);
+  border: 1px solid rgba(37,211,102,.3);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px; color: #fff;
+}
+.banner-helpline span { font-weight: 600; margin-right: 8px; }
+.banner-helpline a { color: #4ade80; font-weight: 700; }
+
+/* Tricolor strip */
+.tricolor-strip {
+  display: flex; height: 10px;
+  position: relative; z-index: 1;
+}
+.tc-saffron { flex: 1; background: #FF9933; }
+.tc-white   {
+  flex: 1; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.tc-white span { font-size: 8px; color: #000080; font-weight: 700; letter-spacing: 1px; }
+.tc-green  { flex: 1; background: #138808; }
+
+/* ===== RESPONSIVE HERO ===== */
+@media (max-width: 768px) {
+  .banner-wrap { grid-template-columns: 1fr; gap: 28px; padding: 32px 16px 28px; }
+  .banner-right { padding: 20px 16px; }
+  .gov-bar-inner { justify-content: center; text-align: center; }
+}
 
 /* ===== STATS BAR ===== */
 .stats-bar { background: var(--dark); padding: 36px 0; }
@@ -113,6 +238,36 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
 .stat { text-align: center; }
 .stat-num { display: block; font-size: 32px; font-weight: 700; color: var(--orange); }
 .stat-label { font-size: 13px; color: #94a3b8; }
+
+/* ===== WHATSAPP CHANNEL BANNER ===== */
+.wa-banner {
+  background: #25d366;
+  padding: 14px 0;
+}
+.wa-banner-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; flex-wrap: wrap;
+  color: white; font-size: 15px;
+}
+.wa-banner-btn {
+  background: white; color: #128c4a;
+  font-weight: 700; font-size: 13px;
+  padding: 7px 20px; border-radius: 50px;
+  transition: background .2s, transform .2s;
+  white-space: nowrap;
+}
+.wa-banner-btn:hover { background: #e6ffe8; transform: scale(1.04); }
+
+/* ===== FOOTER WA CHANNEL ===== */
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.wa-channel-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25d366; color: white;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: 50px;
+  transition: background .2s, transform .2s;
+}
+.wa-channel-btn:hover { background: #1ebe5d; transform: scale(1.04); }
 
 /* ===== SECTION COMMON ===== */
 .section-title {
@@ -216,15 +371,17 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
 
 /* ===== WHATSAPP FAB ===== */
 .whatsapp-fab {
-  position: fixed; bottom: 28px; right: 28px; z-index: 200;
-  width: 56px; height: 56px;
+  position: fixed; bottom: 28px; right: 24px; z-index: 200;
   background: #25d366;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(37,211,102,.5);
+  border-radius: 50px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 20px;
+  box-shadow: 0 4px 20px rgba(37,211,102,.55);
   transition: transform .2s, box-shadow .2s;
+  color: white;
 }
-.whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.7); }
+.whatsapp-fab:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,.7); }
+.fab-text { font-size: 14px; font-weight: 600; white-space: nowrap; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
