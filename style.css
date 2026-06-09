@@ -86,16 +86,16 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
 /* Owner photo – blurred full background */
 .hero-bg-img {
   position: absolute; inset: 0; z-index: 0;
-  background: url('owner.jpg') center center / cover no-repeat;
-  filter: blur(6px) brightness(0.35) saturate(0.7);
-  transform: scale(1.06); /* hide blur edges */
+  background: url('owner.jpg') center top / contain no-repeat;
+  filter: blur(3px) brightness(0.55) saturate(0.8);
+  transform: scale(1.03);
 }
 
 .hero::before {
   content: '';
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(160deg, rgba(10,31,110,.72) 0%, rgba(26,63,173,.65) 45%, rgba(14,45,143,.72) 100%),
+    linear-gradient(160deg, rgba(10,31,110,.60) 0%, rgba(26,63,173,.50) 45%, rgba(14,45,143,.60) 100%),
     radial-gradient(ellipse at 80% 50%, rgba(255,153,0,.10) 0%, transparent 60%);
   pointer-events: none;
 }
