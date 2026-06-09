@@ -83,20 +83,12 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
   overflow: hidden;
 }
 
-/* Owner photo – blurred full background */
-.hero-bg-img {
-  position: absolute; inset: 0; z-index: 0;
-  background: url('owner.jpg') center top / contain no-repeat;
-  filter: blur(3px) brightness(0.55) saturate(0.8);
-  transform: scale(1.03);
-}
-
 .hero::before {
   content: '';
-  position: absolute; inset: 0; z-index: 1;
+  position: absolute; inset: 0;
   background:
-    linear-gradient(160deg, rgba(10,31,110,.60) 0%, rgba(26,63,173,.50) 45%, rgba(14,45,143,.60) 100%),
-    radial-gradient(ellipse at 80% 50%, rgba(255,153,0,.10) 0%, transparent 60%);
+    radial-gradient(ellipse at 80% 50%, rgba(255,153,0,.12) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1.2' fill='rgba(255,255,255,.07)'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 
@@ -316,6 +308,33 @@ nav ul a:hover { background: var(--blue); color: var(--white); }
 /* ===== ABOUT ===== */
 .about { padding: 80px 0; background: var(--white); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+/* Owner photo card */
+.owner-card {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 16px;
+}
+.owner-photo {
+  width: 100%;
+  max-width: 340px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.18);
+  border: 4px solid var(--blue);
+}
+.owner-name {
+  font-size: 22px; font-weight: 700;
+  color: var(--dark); letter-spacing: 0.5px;
+}
+.owner-role {
+  font-size: 13px; color: var(--gray);
+  background: #eff6ff; color: var(--blue);
+  padding: 4px 16px; border-radius: 50px;
+  font-weight: 600;
+}
+
 .about-placeholder {
   background: linear-gradient(135deg, var(--blue), #0ea5e9);
   border-radius: var(--radius);
