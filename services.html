@@ -201,7 +201,7 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header id="header">
+  <header id="header" class="scrolled">
     <div class="container nav-wrap">
       <a href="index.html" class="logo" style="text-decoration:none;">
         <img src="csc-logo.jpg" alt="CSC Logo" onerror="this.style.display='none'" />
@@ -975,6 +975,11 @@
     // Mobile menu toggle
     document.getElementById('menuToggle').addEventListener('click', function () {
       document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Header always scrolled on services page (no transparent mode)
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.add('scrolled');
     });
 
     const tabs   = document.querySelectorAll('.filter-tab');
