@@ -32,7 +32,7 @@
   <style>
     /* ===== SERVICES PAGE SPECIFIC ===== */
     .services-hero {
-      background: linear-gradient(160deg, #0a1f6e 0%, #1a3fad 45%, #0e2d8f 100%);
+      background: linear-gradient(160deg, #050d1f 0%, #0a1f6e 50%, #07153d 100%);
       padding: 110px 0 60px;
       text-align: center;
       position: relative;
@@ -41,7 +41,9 @@
     .services-hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(255,153,0,.12) 0%, transparent 60%);
+      background:
+        radial-gradient(ellipse at 70% 40%, rgba(255,119,0,.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(26,86,219,.18) 0%, transparent 50%);
       pointer-events: none;
     }
     .services-hero h1 {
@@ -87,7 +89,7 @@
       background: #0d1b3e;
       padding: 18px 0;
       border-bottom: 1px solid rgba(255,255,255,.1);
-      position: sticky; top: 68px; z-index: 50;
+      position: sticky; top: 72px; z-index: 50;
       box-shadow: 0 2px 16px rgba(0,0,0,.3);
     }
     .filter-tabs {
@@ -201,7 +203,7 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header id="header" class="scrolled">
+  <header id="header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo" style="text-decoration:none;">
         <img src="csc-logo.jpg" alt="CSC Logo" onerror="this.style.display='none'" />
@@ -977,9 +979,9 @@
       document.getElementById('navLinks').classList.toggle('open');
     });
 
-    // Header always scrolled on services page (no transparent mode)
+    // Transparent → solid header on scroll
     window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.add('scrolled');
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
     });
 
     const tabs   = document.querySelectorAll('.filter-tab');
