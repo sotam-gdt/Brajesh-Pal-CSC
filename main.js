@@ -11,12 +11,10 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Sticky header shadow on scroll
+// Transparent → solid header on scroll
 window.addEventListener('scroll', () => {
   const header = document.getElementById('header');
-  header.style.boxShadow = window.scrollY > 10
-    ? '0 4px 20px rgba(0,0,0,.15)'
-    : '0 2px 12px rgba(0,0,0,.08)';
+  header.classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // Contact form – simple local feedback (no backend needed for static site)

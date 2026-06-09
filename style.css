@@ -119,10 +119,15 @@ img { max-width: 100%; display: block; }
 /* ===== HEADER ===== */
 #header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  box-shadow: none;
+  transition: background .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+#header.scrolled {
   background: #ffffff;
   border-bottom: 4px solid #ff7700;
   box-shadow: 0 3px 16px rgba(0,0,0,.12);
-  transition: box-shadow .3s;
 }
 .nav-wrap {
   display: flex; align-items: center; justify-content: space-between;
@@ -133,8 +138,9 @@ img { max-width: 100%; display: block; }
   height: 52px; width: 52px;
   object-fit: cover; border-radius: 50%;
   animation: logoPopIn .5s .1s cubic-bezier(.34,1.56,.64,1) both;
-  border: 3px solid #1a56db;
-  box-shadow: 0 0 0 3px rgba(26,86,219,.15), 0 3px 12px rgba(0,0,0,.12);
+  border: 3px solid rgba(255,255,255,.8);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.15), 0 3px 12px rgba(0,0,0,.25);
+  transition: border-color .35s, box-shadow .35s;
 }
 @keyframes logoPopIn {
   from { opacity: 0; transform: scale(.4) rotate(-15deg); }
@@ -149,6 +155,11 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.6px;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  transition: color .35s;
+}
+#header.scrolled .logo-title {
   background: linear-gradient(135deg, #0a1f6e 0%, #1a56db 50%, #ff7700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -157,10 +168,12 @@ img { max-width: 100%; display: block; }
 .logo-sub {
   display: block;
   font-size: 11px;
-  color: var(--gray);
+  color: rgba(255,255,255,.75);
   margin-top: 2px;
   letter-spacing: 0.3px;
+  transition: color .35s;
 }
+#header.scrolled .logo-sub { color: var(--gray); }
 
 nav ul { display: flex; gap: 4px; list-style: none; }
 nav ul a {
@@ -168,10 +181,11 @@ nav ul a {
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
-  color: #1a3fad;
+  color: rgba(255,255,255,.9);
   transition: background .2s, color .2s, box-shadow .2s;
   letter-spacing: 0.3px;
 }
+#header.scrolled nav ul a { color: #1a3fad; }
 nav ul a:hover {
   background: #ff7700;
   color: #fff;
@@ -180,8 +194,9 @@ nav ul a:hover {
 
 .menu-toggle {
   display: none; background: none; border: none;
-  font-size: 24px; cursor: pointer; color: #1a3fad;
+  font-size: 24px; cursor: pointer; color: rgba(255,255,255,.9);
 }
+#header.scrolled .menu-toggle { color: #1a3fad; }
 
 /* ===== CSC BANNER / HERO ===== */
 #heroBgVideo {
@@ -807,9 +822,10 @@ nav ul a:hover {
     flex-direction: column;
     position: absolute;
     top: 72px; left: 0; right: 0;
-    background: #ffffff;
+    background: rgba(10,20,70,.92);
+    backdrop-filter: blur(12px);
     padding: 12px 20px 20px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
     border-bottom: 4px solid #ff7700;
     gap: 2px;
   }
