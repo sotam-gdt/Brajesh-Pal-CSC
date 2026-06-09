@@ -4,7 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Services – Brajesh Pal CSC Center</title>
-  <meta name="description" content="Complete list of government and digital services available at Brajesh Pal CSC Center, Madhya Pradesh. Aadhaar, PAN, certificates, banking, insurance and more." />
+  <meta name="description" content="All government services at Brajesh Pal CSC Center, Satai, Chhatarpur – 471408, MP. Aadhaar, PAN, certificates, banking, insurance and 100+ more services." />
+  <meta name="keywords" content="CSC services Satai, Aadhaar Satai, PAN Card Chhatarpur, certificates 471408, banking CSC Satai, insurance Satai, government services Chhatarpur, digital services 471408, Brajesh Pal CSC Satai" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brajesh-pal-csc.vercel.app/services.html" />
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Brajesh Pal CSC Center" />
+  <meta property="og:title" content="All Services – Brajesh Pal CSC Center, Satai" />
+  <meta property="og:description" content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408. Aadhaar, PAN, certificates, banking, insurance and more." />
+  <meta property="og:url" content="https://brajesh-pal-csc.vercel.app/services.html" />
+  <meta property="og:image" content="https://brajesh-pal-csc.vercel.app/csc-logo.jpg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="Brajesh Pal CSC Center Logo" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="All Services – Brajesh Pal CSC Center, Satai" />
+  <meta name="twitter:description" content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408, Madhya Pradesh." />
+  <meta name="twitter:image" content="https://brajesh-pal-csc.vercel.app/csc-logo.jpg" />
+  <meta name="twitter:image:alt" content="Brajesh Pal CSC Center Logo" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/jpeg" href="csc-logo.jpg" />
   <link rel="apple-touch-icon" href="csc-logo.jpg" />
@@ -182,13 +201,13 @@
   <!-- ===== HEADER ===== -->
   <header id="header">
     <div class="container nav-wrap">
-      <div class="logo">
+      <a href="index.html" class="logo" style="text-decoration:none;">
         <img src="csc-logo.jpg" alt="CSC Logo" onerror="this.style.display='none'" />
         <div>
           <span class="logo-title">Smart Portal</span>
           <span class="logo-sub">Common Service Centre · Madhya Pradesh</span>
         </div>
-      </div>
+      </a>
       <nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
         <ul id="navLinks">
@@ -956,47 +975,79 @@
       document.getElementById('navLinks').classList.toggle('open');
     });
 
-    // Category filter tabs
-    const tabs = document.querySelectorAll('.filter-tab');
+    const tabs   = document.querySelectorAll('.filter-tab');
     const blocks = document.querySelectorAll('.category-block');
+    const searchInput = document.getElementById('serviceSearch');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', function () {
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        const cat = this.dataset.cat;
-        blocks.forEach(block => {
-          block.style.display = (cat === 'all' || block.dataset.cat === cat) ? '' : 'none';
-        });
-        document.getElementById('serviceSearch').value = '';
+    /* ── helpers ── */
+    function applyCategory(cat) {
+      tabs.forEach(t => t.classList.remove('active'));
+      const target = document.querySelector('[data-cat="' + cat + '"]') ||
+                     document.querySelector('[data-cat="all"]');
+      target.classList.add('active');
+      blocks.forEach(block => {
+        block.style.display = (cat === 'all' || block.dataset.cat === cat) ? '' : 'none';
       });
-    });
+      document.querySelectorAll('a.srv-card').forEach(c => c.style.display = '');
+    }
 
-    // Live search
-    document.getElementById('serviceSearch').addEventListener('input', function () {
-      const q = this.value.trim().toLowerCase();
+    function applySearch(q) {
       if (!q) {
         const activeCat = document.querySelector('.filter-tab.active').dataset.cat;
-        blocks.forEach(block => {
-          block.style.display = (activeCat === 'all' || block.dataset.cat === activeCat) ? '' : 'none';
-        });
-        // restore card visibility
-        document.querySelectorAll('a.srv-card').forEach(c => c.style.display = '');
+        applyCategory(activeCat);
         return;
       }
       tabs.forEach(t => t.classList.remove('active'));
       document.querySelector('[data-cat="all"]').classList.add('active');
-
       blocks.forEach(block => {
         const cards = block.querySelectorAll('a.srv-card');
         let anyMatch = false;
         cards.forEach(card => {
-          const match = card.textContent.toLowerCase().includes(q);
+          const match = card.textContent.toLowerCase().includes(q.toLowerCase());
           card.style.display = match ? '' : 'none';
           if (match) anyMatch = true;
         });
         block.style.display = anyMatch ? '' : 'none';
       });
+    }
+
+    function syncURL(q, cat) {
+      const params = new URLSearchParams(window.location.search);
+      if (q)   { params.set('q', q);     params.delete('cat'); }
+      else if (cat && cat !== 'all') { params.set('cat', cat); params.delete('q'); }
+      else     { params.delete('q'); params.delete('cat'); }
+      const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+      history.replaceState(null, '', newURL);
+    }
+
+    /* ── init from URL on page load ── */
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const q   = params.get('q')   || '';
+      const cat = params.get('cat') || 'all';
+      if (q) {
+        searchInput.value = q;
+        applySearch(q);
+      } else {
+        applyCategory(cat);
+      }
+    })();
+
+    /* ── category filter tabs ── */
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        const cat = this.dataset.cat;
+        searchInput.value = '';
+        applyCategory(cat);
+        syncURL('', cat);
+      });
+    });
+
+    /* ── live search + URL sync ── */
+    searchInput.addEventListener('input', function () {
+      const q = this.value.trim();
+      applySearch(q);
+      syncURL(q, '');
     });
   </script>
 </body>
