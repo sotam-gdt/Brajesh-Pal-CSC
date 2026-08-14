@@ -447,45 +447,40 @@
 <div id="welcomePopup" class="popup-overlay">
   <div class="popup-box">
 
+    <!-- Official Logo -->
+    <div class="popup-logo">
+      <img src="csc-logo.jpg" alt="Smart Portal Official Logo">
+    </div>
+
     <span class="tag">FREE JOB ALERT</span>
 
-    <h2>Get Instant Updates on WhatsApp</h2>
+    <h2>Join Our Official WhatsApp Channels</h2>
 
     <p>
-      Receive latest jobs, admit cards, results, government schemes,
-      important links and useful updates directly on WhatsApp.
+      Get the latest Government Jobs, MP Government Schemes, Admit Cards,
+      Results, Smart Portal Updates, and Cyber Cafe Tools directly on WhatsApp.
     </p>
 
-    <ul>
-      <li>✅ Daily Verified Job Updates</li>
-      <li>✅ Government Scheme Notifications</li>
-      <li>✅ Admit Card & Result Alerts</li>
-      <li>✅ MP Government Services</li>
-    </ul>
+    <a href="https://whatsapp.com/channel/0029Vax804j2UPB8wsZU4B05" target="_blank" class="btn whatsapp">
+      📢 𝐒𝐦𝐚𝐫𝐭 𝐏𝐨𝐫𝐭𝐚𝐥 - 𝑺𝒂𝒓𝒌𝒂𝒓𝒊 𝑵𝒆𝒘 𝑼𝒑𝒅𝒂𝒕𝒆𝒔 | 𝑨𝒍𝒍 𝑮𝒐𝒗𝒕. 𝑱𝒐𝒃𝒔
+    </a>
 
-    <!-- WhatsApp Channels -->
-    <div class="channel-list">
 
-      <a href="https://whatsapp.com/channel/0029Vax804j2UPB8wsZU4B05" target="_blank" class="btn whatsapp">
-        📢 MP Jobs & Recruitment
-      </a>
+    <a href="https://whatsapp.com/channel/0029Vb6f373GU3BG8yixL43e" target="_blank" class="btn whatsapp">
+      👩 𝐂𝐌 𝐋𝐚𝐝𝐥𝐢 𝐁𝐚𝐡𝐧𝐚 𝐘𝐨𝐣𝐚𝐧𝐚
+    </a>
 
-      <a href="https://whatsapp.com/channel/0029Vb6f373GU3BG8yixL43e" target="_blank" class="btn whatsapp">
-        🎓 Education & Exam Updates
-      </a>
+    <a href="https://whatsapp.com/channel/0029Vb6VGha3mFYA58GqZO0O" target="_blank" class="btn whatsapp">
+      🚀 𝐒𝐌𝐀𝐑𝐓 𝐏𝐎𝐑𝐓𝐀𝐋 2.0
+    </a>
 
-      <a href="https://whatsapp.com/channel/0029Vb6VGha3mFYA58GqZO0O" target="_blank" class="btn whatsapp">
-        🏛️ MP Government Services
-      </a>
+    <a href="https://whatsapp.com/channel/0029VbCCXQGEAKWKbBjymC1E" target="_blank" class="btn whatsapp">
+      📰 स्मार्ट न्यूज | 𝐒𝐦𝐚𝐫𝐭 𝐍𝐞𝐰𝐬
+    </a>
 
-      <a href="https://whatsapp.com/channel/0029VbCCXQGEAKWKbBjymC1E" target="_blank" class="btn whatsapp">
-        🌾 Land Records & Survey Updates
-      </a>
-      <a href="https://whatsapp.com/channel/0029Vb5exDp3WHTgOhqOOf0k" target="_blank" class="btn whatsapp">
-        🛠️ 𝐏𝐚𝐥 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐓𝐨𝐨𝐥 𝐒𝐚𝐭𝐚𝐢 - 𝐂𝐲𝐛𝐞𝐫 𝐂𝐚𝐟𝐞 𝐓𝐨𝐨𝐥𝐬
-      </a>
-
-    </div>
+    <a href="https://whatsapp.com/channel/0029Vb5exDp3WHTgOhqOOf0k" target="_blank" class="btn whatsapp">
+      🛠️ 𝐏𝐚𝐥 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐓𝐨𝐨𝐥 𝐒𝐚𝐭𝐚𝐢 - 𝐂𝐲𝐛𝐞𝐫 𝐂𝐚𝐟𝐞 𝐓𝐨𝐨𝐥𝐬
+    </a>
 
     <button id="continueBtn" class="continue">
       Continue to Website
@@ -521,123 +516,93 @@
   .popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, .65);
+    background: rgba(4, 12, 35, .78);
+    backdrop-filter: blur(3px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 999999;
   }
 
   .popup-box {
-
-    width: 420px;
+    width: 480px;
     max-width: 95%;
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    animation: popup .4s ease;
+    background: rgba(20, 33, 78, .96);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 18px;
+    padding: 28px;
+    color: #fff;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+    animation: popup .35s ease;
   }
 
-  @keyframes popup {
+  .popup-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 
-    from {
-
-      transform: scale(.7);
-      opacity: 0;
-
-    }
-
-    to {
-
-      transform: scale(1);
-      opacity: 1;
-
-    }
-
+  .popup-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #ff8c32;
+    background: #fff;
   }
 
   .tag {
-
     display: inline-block;
-    background: #e7ffe9;
-    color: #16a34a;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
+    background: #ff8c32;
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
     margin-bottom: 15px;
-
   }
 
   .popup-box h2 {
-
-    margin: 10px 0;
-
+    color: #fff;
+    margin: 15px 0;
   }
 
   .popup-box p {
-
-    color: #666;
-    font-size: 15px;
-    line-height: 24px;
-
+    color: #d8def5;
+    line-height: 1.6;
   }
 
-  .popup-box ul {
-
-    text-align: left;
-    margin: 20px 0;
-    padding-left: 20px;
-
-  }
-
-  .popup-box li {
-
-    margin: 10px 0;
-
-  }
-
-  .btn {
-
-    display: block;
-    text-decoration: none;
-    padding: 14px;
-    margin: 12px 0;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #fff;
-
-  }
-
-  .whatsapp {
-
+  .btn.whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     background: #25D366;
-
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    text-decoration: none;
+    transition: .3s;
   }
 
-  .telegram {
-
-    background: #229ED9;
-
+  .btn.whatsapp:hover {
+    background: #1ca851;
+    transform: translateY(-2px);
   }
 
   .continue {
-
     width: 100%;
-    padding: 13px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 8px;
+    margin-top: 15px;
+    background: #2d6df6;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
-
   }
 
   .continue:hover {
-
-    background: #f7f7f7;
-
+    background: #1f5ddd;
   }
 </STYLE>
 <!-- This is a popup End -->
