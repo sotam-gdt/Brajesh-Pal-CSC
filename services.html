@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Services – Brajesh Pal CSC Center</title>
-  <meta name="description" content="All government services at Brajesh Pal CSC Center, Satai, Chhatarpur – 471408, MP. Aadhaar, PAN, certificates, banking, insurance and 100+ more services." />
-  <meta name="keywords" content="CSC services Satai, Aadhaar Satai, PAN Card Chhatarpur, certificates 471408, banking CSC Satai, insurance Satai, government services Chhatarpur, digital services 471408, Brajesh Pal CSC Satai" />
+  <meta name="description"
+    content="All government services at Brajesh Pal CSC Center, Satai, Chhatarpur – 471408, MP. Aadhaar, PAN, certificates, banking, insurance and 100+ more services." />
+  <meta name="keywords"
+    content="CSC services Satai, Aadhaar Satai, PAN Card Chhatarpur, certificates 471408, banking CSC Satai, insurance Satai, government services Chhatarpur, digital services 471408, Brajesh Pal CSC Satai" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://brajesh-pal-csc.vercel.app/services.html" />
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Brajesh Pal CSC Center" />
   <meta property="og:title" content="All Services – Brajesh Pal CSC Center, Satai" />
-  <meta property="og:description" content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408. Aadhaar, PAN, certificates, banking, insurance and more." />
+  <meta property="og:description"
+    content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408. Aadhaar, PAN, certificates, banking, insurance and more." />
   <meta property="og:url" content="https://brajesh-pal-csc.vercel.app/services.html" />
   <meta property="og:image" content="https://brajesh-pal-csc.vercel.app/csc-logo.jpg" />
   <meta property="og:image:width" content="500" />
@@ -21,7 +25,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="All Services – Brajesh Pal CSC Center, Satai" />
-  <meta name="twitter:description" content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408, Madhya Pradesh." />
+  <meta name="twitter:description"
+    content="100+ government services at Brajesh Pal CSC, Satai, Chhatarpur – 471408, Madhya Pradesh." />
   <meta name="twitter:image" content="https://brajesh-pal-csc.vercel.app/csc-logo.jpg" />
   <meta name="twitter:image:alt" content="Brajesh Pal CSC Center Logo" />
   <link rel="stylesheet" href="style.css" />
@@ -38,36 +43,56 @@
       position: relative;
       overflow: hidden;
     }
+
     .services-hero::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background:
-        radial-gradient(ellipse at 70% 40%, rgba(255,119,0,.12) 0%, transparent 55%),
-        radial-gradient(ellipse at 20% 80%, rgba(26,86,219,.18) 0%, transparent 50%);
+        radial-gradient(ellipse at 70% 40%, rgba(255, 119, 0, .12) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(26, 86, 219, .18) 0%, transparent 50%);
       pointer-events: none;
     }
+
     .services-hero h1 {
       font-size: clamp(28px, 4vw, 48px);
-      font-weight: 800; color: #fff;
+      font-weight: 800;
+      color: #fff;
       margin-bottom: 12px;
     }
+
     .services-hero p {
-      font-size: 16px; color: rgba(255,255,255,.75);
-      max-width: 560px; margin: 0 auto 28px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, .75);
+      max-width: 560px;
+      margin: 0 auto 28px;
     }
+
     .breadcrumb {
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; font-size: 13px; color: rgba(255,255,255,.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .6);
       margin-bottom: 20px;
     }
-    .breadcrumb a { color: #ff9900; }
-    .breadcrumb span { color: rgba(255,255,255,.4); }
+
+    .breadcrumb a {
+      color: #ff9900;
+    }
+
+    .breadcrumb span {
+      color: rgba(255, 255, 255, .4);
+    }
 
     /* Search bar */
     .search-wrap {
-      max-width: 480px; margin: 0 auto;
+      max-width: 480px;
+      margin: 0 auto;
       position: relative;
     }
+
     .search-wrap input {
       width: 100%;
       padding: 14px 50px 14px 20px;
@@ -76,62 +101,95 @@
       font-size: 15px;
       font-family: 'Poppins', sans-serif;
       outline: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
     }
+
     .search-wrap .search-icon {
-      position: absolute; right: 18px; top: 50%;
+      position: absolute;
+      right: 18px;
+      top: 50%;
       transform: translateY(-50%);
-      font-size: 20px; cursor: default;
+      font-size: 20px;
+      cursor: default;
     }
 
     /* Category filter tabs */
     .filter-bar {
       background: #0d1b3e;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      position: sticky; top: 72px; z-index: 50;
-      box-shadow: 0 2px 16px rgba(0,0,0,.3);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      position: sticky;
+      top: 72px;
+      z-index: 50;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .3);
     }
+
     .filter-tabs {
-      display: flex; gap: 8px; flex-wrap: wrap;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
       justify-content: center;
     }
+
     .filter-tab {
       padding: 7px 18px;
       border-radius: 50px;
-      font-size: 13px; font-weight: 600;
-      border: 1.5px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.07);
-      color: rgba(255,255,255,.8);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid rgba(255, 255, 255, .2);
+      background: rgba(255, 255, 255, .07);
+      color: rgba(255, 255, 255, .8);
       cursor: pointer;
       transition: all .2s;
     }
+
     .filter-tab:hover,
     .filter-tab.active {
-      background: var(--blue); color: var(--white);
+      background: var(--blue);
+      color: var(--white);
       border-color: var(--blue);
     }
 
     /* All services layout */
-    .all-services { padding: 60px 0 80px; background: #111827; }
+    .all-services {
+      padding: 60px 0 80px;
+      background: #111827;
+    }
 
-    .category-block { margin-bottom: 60px; }
+    .category-block {
+      margin-bottom: 60px;
+    }
+
     .category-heading {
-      display: flex; align-items: center; gap: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       margin-bottom: 24px;
     }
+
     .cat-icon-wrap {
-      width: 52px; height: 52px;
+      width: 52px;
+      height: 52px;
       background: var(--blue);
       border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
     }
+
     .cat-title-wrap h2 {
-      font-size: 22px; font-weight: 700; color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
       margin-bottom: 2px;
     }
-    .cat-title-wrap p { font-size: 13px; color: rgba(255,255,255,.5); }
+
+    .cat-title-wrap p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .5);
+    }
 
     .services-full-grid {
       display: grid;
@@ -142,64 +200,126 @@
     /* Card as link */
     a.srv-card {
       display: block;
-      background: rgba(255,255,255,.06);
+      background: rgba(255, 255, 255, .06);
       border-radius: var(--radius);
       padding: 22px 20px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.3);
-      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .3);
+      border: 1px solid rgba(255, 255, 255, .08);
       border-left: 4px solid var(--blue);
       transition: transform .2s, box-shadow .2s, background .2s;
       text-decoration: none;
       color: inherit;
       position: relative;
     }
+
     a.srv-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(26,86,219,.3);
-      background: rgba(255,255,255,.1);
+      box-shadow: 0 8px 28px rgba(26, 86, 219, .3);
+      background: rgba(255, 255, 255, .1);
     }
+
     a.srv-card::after {
       content: '↗';
-      position: absolute; top: 14px; right: 14px;
-      font-size: 14px; color: rgba(255,255,255,.3);
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .3);
       transition: color .2s;
     }
-    a.srv-card:hover::after { color: #7eb8ff; }
+
+    a.srv-card:hover::after {
+      color: #7eb8ff;
+    }
 
     .srv-card-top {
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 8px;
     }
-    .srv-card-top .srv-emoji { font-size: 26px; }
-    .srv-card-top h3 { font-size: 15px; font-weight: 700; color: #7eb8ff; }
-    .srv-card p { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.5; }
+
+    .srv-card-top .srv-emoji {
+      font-size: 26px;
+    }
+
+    .srv-card-top h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #7eb8ff;
+    }
+
+    .srv-card p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.5;
+    }
+
     .srv-badge {
       display: inline-block;
       margin-top: 10px;
-      font-size: 11px; font-weight: 600;
-      padding: 3px 10px; border-radius: 50px;
-      background: rgba(26,86,219,.3); color: #7eb8ff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: rgba(26, 86, 219, .3);
+      color: #7eb8ff;
     }
-    .srv-badge.orange { background: rgba(249,115,22,.25); color: #fdba74; }
-    .srv-badge.green  { background: rgba(22,163,74,.25);  color: #86efac; }
+
+    .srv-badge.orange {
+      background: rgba(249, 115, 22, .25);
+      color: #fdba74;
+    }
+
+    .srv-badge.green {
+      background: rgba(22, 163, 74, .25);
+      color: #86efac;
+    }
 
     /* CTA bottom */
     .services-cta {
       background: linear-gradient(135deg, #0a1f6e, #1a3fad);
-      padding: 60px 0; text-align: center;
+      padding: 60px 0;
+      text-align: center;
     }
-    .services-cta h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-    .services-cta p  { color: rgba(255,255,255,.75); margin-bottom: 28px; }
-    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .services-cta h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .services-cta p {
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 28px;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
-      .filter-tabs { gap: 6px; }
-      .filter-tab  { font-size: 12px; padding: 6px 14px; }
-      .services-full-grid { grid-template-columns: 1fr; }
+      .filter-tabs {
+        gap: 6px;
+      }
+
+      .filter-tab {
+        font-size: 12px;
+        padding: 6px 14px;
+      }
+
+      .services-full-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -276,50 +396,72 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://pmkisan.gov.in/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">🌻</span><h3>PM-KISAN Registration</h3></div>
+          <a class="srv-card" href="https://pmkisan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">🌻</span>
+              <h3>PM-KISAN Registration</h3>
+            </div>
             <p>Register for ₹6000/year PM Kisan Samman Nidhi direct benefit transfer.</p>
             <span class="srv-badge green">PM-KISAN</span>
           </a>
 
-          <a class="srv-card" href="https://www.nabard.org/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">💳</span><h3>Kisan Credit Card (KCC)</h3></div>
+          <a class="srv-card" href="https://www.nabard.org/" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">💳</span>
+              <h3>Kisan Credit Card (KCC)</h3>
+            </div>
             <p>Apply for KCC for affordable crop loan at subsidized interest rates.</p>
             <span class="srv-badge green">KCC</span>
           </a>
 
-          <a class="srv-card" href="https://webgis2.mpbhulekh.gov.in/#/home" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">📋</span><h3>Land Record (Khasra/Khatauni)</h3></div>
+          <a class="srv-card" href="https://webgis2.mpbhulekh.gov.in/#/home" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">📋</span>
+              <h3>Land Record (Khasra/Khatauni)</h3>
+            </div>
             <p>Download land records, khasra, khatauni &amp; B1 copies from MP Bhulekh portal.</p>
             <span class="srv-badge green">MP Bhulekh</span>
           </a>
 
-          <a class="srv-card" href="https://soilhealth.dac.gov.in/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">🌿</span><h3>Soil Health Card</h3></div>
+          <a class="srv-card" href="https://soilhealth.dac.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">🌿</span>
+              <h3>Soil Health Card</h3>
+            </div>
             <p>Get soil health card &amp; information on fertilizers for better crop yield.</p>
             <span class="srv-badge green">Agriculture</span>
           </a>
 
           <a class="srv-card" href="https://dahd.gov.in/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">🐄</span><h3>Animal Husbandry Services</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🐄</span>
+              <h3>Animal Husbandry Services</h3>
+            </div>
             <p>Cattle vaccination, Pashu Aadhaar, and livestock-related government schemes.</p>
             <span class="srv-badge green">Livestock</span>
           </a>
 
           <a class="srv-card" href="https://pmfby.gov.in/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">☔</span><h3>PMFBY Crop Insurance</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">☔</span>
+              <h3>PMFBY Crop Insurance</h3>
+            </div>
             <p>Register for Pradhan Mantri Fasal Bima Yojana crop insurance coverage.</p>
             <span class="srv-badge green">PMFBY</span>
           </a>
 
-          <a class="srv-card" href="https://mpfr.agristack.gov.in/farmer-registry-mp/#/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">🧑‍🌾</span><h3>MP Farmer Registry (AgriStack)</h3></div>
+          <a class="srv-card" href="https://mpfr.agristack.gov.in/farmer-registry-mp/#/" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">🧑‍🌾</span>
+              <h3>MP Farmer Registry (AgriStack)</h3>
+            </div>
             <p>Register as a farmer on MP AgriStack portal for digital farm ID & benefits.</p>
             <span class="srv-badge green">AgriStack MP</span>
           </a>
 
-          <a class="srv-card" href="https://evikas.mpkrishi.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#16a34a;">
-            <div class="srv-card-top"><span class="srv-emoji">🌱</span><h3>eVikas – MP Agriculture</h3></div>
+          <a class="srv-card" href="https://evikas.mpkrishi.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#16a34a;">
+            <div class="srv-card-top"><span class="srv-emoji">🌱</span>
+              <h3>eVikas – MP Agriculture</h3>
+            </div>
             <p>Farmer registration, input subsidies & agricultural scheme benefits via eVikas portal.</p>
             <span class="srv-badge green">MP Krishi</span>
           </a>
@@ -339,49 +481,66 @@
         <div class="services-full-grid">
 
           <a class="srv-card" href="https://uidai.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">🪪</span><h3>Aadhaar Enrollment</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🪪</span>
+              <h3>Aadhaar Enrollment</h3>
+            </div>
             <p>New Aadhaar registration for individuals not yet enrolled in UIDAI database.</p>
             <span class="srv-badge green">UIDAI</span>
           </a>
 
           <a class="srv-card" href="https://ssup.uidai.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">✏️</span><h3>Aadhaar Update / Correction</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">✏️</span>
+              <h3>Aadhaar Update / Correction</h3>
+            </div>
             <p>Update name, address, mobile, DOB, gender in existing Aadhaar records.</p>
             <span class="srv-badge green">UIDAI</span>
           </a>
 
-          <a class="srv-card" href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">📇</span><h3>PAN Card (New &amp; Correction)</h3></div>
+          <a class="srv-card" href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"
+            target="_blank" rel="noopener">
+            <div class="srv-card-top"><span class="srv-emoji">📇</span>
+              <h3>PAN Card (New &amp; Correction)</h3>
+            </div>
             <p>Apply for new PAN card or corrections in existing PAN through NSDL/UTI portals.</p>
             <span class="srv-badge">Income Tax</span>
           </a>
 
           <a class="srv-card" href="https://voters.eci.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">🗳️</span><h3>Voter ID (EPIC) Services</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🗳️</span>
+              <h3>Voter ID (EPIC) Services</h3>
+            </div>
             <p>New voter ID registration, name correction, address update &amp; voter list enrollment.</p>
             <span class="srv-badge">ECI</span>
           </a>
 
           <a class="srv-card" href="https://passportindia.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">🛂</span><h3>Passport Application</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🛂</span>
+              <h3>Passport Application</h3>
+            </div>
             <p>Assist with fresh passport &amp; renewal applications via Passport Seva portal.</p>
             <span class="srv-badge">MEA</span>
           </a>
 
           <a class="srv-card" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">📦</span><h3>DigiLocker Account</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">📦</span>
+              <h3>DigiLocker Account</h3>
+            </div>
             <p>Create &amp; manage DigiLocker account to store all govt. documents digitally.</p>
             <span class="srv-badge green">MeitY</span>
           </a>
 
           <a class="srv-card" href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">🪢</span><h3>Aadhaar–PAN Linking</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🪢</span>
+              <h3>Aadhaar–PAN Linking</h3>
+            </div>
             <p>Link PAN card with Aadhaar number as mandated by the Income Tax Department.</p>
             <span class="srv-badge">Income Tax</span>
           </a>
 
           <a class="srv-card" href="https://uidai.gov.in/" target="_blank" rel="noopener">
-            <div class="srv-card-top"><span class="srv-emoji">📱</span><h3>Mobile–Aadhaar Linking</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">📱</span>
+              <h3>Mobile–Aadhaar Linking</h3>
+            </div>
             <p>Link your mobile number with Aadhaar for OTP-based verification services.</p>
             <span class="srv-badge green">UIDAI</span>
           </a>
@@ -401,37 +560,54 @@
         <div class="services-full-grid">
 
           <a class="srv-card" href="https://pmjdy.gov.in/" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">🏦</span><h3>Bank Account Opening</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🏦</span>
+              <h3>Bank Account Opening</h3>
+            </div>
             <p>Open zero-balance savings account (Jan Dhan) &amp; regular accounts at BC outlet.</p>
             <span class="srv-badge green">Jan Dhan</span>
           </a>
 
-          <a class="srv-card" href="https://www.csc.gov.in/" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">💵</span><h3>Cash Deposit &amp; Withdrawal</h3></div>
+          <a class="srv-card" href="https://www.csc.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0891b2;">
+            <div class="srv-card-top"><span class="srv-emoji">💵</span>
+              <h3>Cash Deposit &amp; Withdrawal</h3>
+            </div>
             <p>Deposit or withdraw cash from your bank account through Business Correspondent.</p>
             <span class="srv-badge">BC Services</span>
           </a>
 
-          <a class="srv-card" href="https://www.npci.org.in/" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">🔄</span><h3>Fund Transfer (NEFT/IMPS)</h3></div>
+          <a class="srv-card" href="https://www.npci.org.in/" target="_blank" rel="noopener"
+            style="border-color:#0891b2;">
+            <div class="srv-card-top"><span class="srv-emoji">🔄</span>
+              <h3>Fund Transfer (NEFT/IMPS)</h3>
+            </div>
             <p>Transfer money instantly to any bank account using IMPS or NEFT.</p>
             <span class="srv-badge">BC Services</span>
           </a>
 
-          <a class="srv-card" href="https://www.csc.gov.in/" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">🧾</span><h3>Balance Enquiry &amp; Mini Statement</h3></div>
+          <a class="srv-card" href="https://www.csc.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0891b2;">
+            <div class="srv-card-top"><span class="srv-emoji">🧾</span>
+              <h3>Balance Enquiry &amp; Mini Statement</h3>
+            </div>
             <p>Check account balance and get last 5 transaction statements instantly.</p>
             <span class="srv-badge">BC Services</span>
           </a>
 
-          <a class="srv-card" href="https://www.mudra.org.in/" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">🏠</span><h3>Loan Application Assistance</h3></div>
+          <a class="srv-card" href="https://www.mudra.org.in/" target="_blank" rel="noopener"
+            style="border-color:#0891b2;">
+            <div class="srv-card-top"><span class="srv-emoji">🏠</span>
+              <h3>Loan Application Assistance</h3>
+            </div>
             <p>Help with KCC (Kisan Credit Card), MUDRA, PM SVANidhi &amp; personal loan applications.</p>
             <span class="srv-badge green">PMMY</span>
           </a>
 
-          <a class="srv-card" href="https://www.npci.org.in/what-we-do/rupay/product-overview" target="_blank" rel="noopener" style="border-color:#0891b2;">
-            <div class="srv-card-top"><span class="srv-emoji">💳</span><h3>RuPay / ATM Card Services</h3></div>
+          <a class="srv-card" href="https://www.npci.org.in/what-we-do/rupay/product-overview" target="_blank"
+            rel="noopener" style="border-color:#0891b2;">
+            <div class="srv-card-top"><span class="srv-emoji">💳</span>
+              <h3>RuPay / ATM Card Services</h3>
+            </div>
             <p>Apply for RuPay debit card and assist with PIN generation for bank accounts.</p>
             <span class="srv-badge">NPCI</span>
           </a>
@@ -450,50 +626,74 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">👶</span><h3>Birth Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">👶</span>
+              <h3>Birth Certificate</h3>
+            </div>
             <p>Apply for and get certified birth certificates from MP e-District portal.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">🕊️</span><h3>Death Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">🕊️</span>
+              <h3>Death Certificate</h3>
+            </div>
             <p>Register death and obtain official death certificate for legal purposes.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">👥</span><h3>Caste Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">👥</span>
+              <h3>Caste Certificate</h3>
+            </div>
             <p>SC/ST/OBC caste certificate for government schemes, jobs &amp; admissions.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">💰</span><h3>Income Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">💰</span>
+              <h3>Income Certificate</h3>
+            </div>
             <p>Annual income certificate for EWS, scholarships &amp; government benefits.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">🏡</span><h3>Domicile / Residential Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">🏡</span>
+              <h3>Domicile / Residential Certificate</h3>
+            </div>
             <p>Residence/domicile proof certificate for local reservations &amp; schemes.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">🏥</span><h3>Medical / Disability Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">🏥</span>
+              <h3>Medical / Disability Certificate</h3>
+            </div>
             <p>Disability certificate for divyangjan benefits and special schemes.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">🔍</span><h3>Character Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">🔍</span>
+              <h3>Character Certificate</h3>
+            </div>
             <p>Police clearance &amp; character certificate for employment and admissions.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#7c3aed;">
-            <div class="srv-card-top"><span class="srv-emoji">💑</span><h3>Marriage Certificate</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#7c3aed;">
+            <div class="srv-card-top"><span class="srv-emoji">💑</span>
+              <h3>Marriage Certificate</h3>
+            </div>
             <p>Register marriage and obtain legal marriage certificate from Civil Registration.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">e-District MP</span>
           </a>
@@ -512,50 +712,74 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://www.mpcz.co.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">⚡</span><h3>Electricity Bill Payment</h3></div>
+          <a class="srv-card" href="https://www.mpcz.co.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">⚡</span>
+              <h3>Electricity Bill Payment</h3>
+            </div>
             <p>Pay MPEB / MPPKVVCL electricity bills instantly for all MP circles.</p>
             <span class="srv-badge orange">Utility</span>
           </a>
 
-          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">💧</span><h3>Water Bill Payment</h3></div>
+          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">💧</span>
+              <h3>Water Bill Payment</h3>
+            </div>
             <p>Pay municipal water supply &amp; tanker bills for urban &amp; rural areas.</p>
             <span class="srv-badge orange">Utility</span>
           </a>
 
-          <a class="srv-card" href="https://www.ebharatgas.com/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">🔥</span><h3>Gas / LPG Bill &amp; Booking</h3></div>
+          <a class="srv-card" href="https://www.ebharatgas.com/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">🔥</span>
+              <h3>Gas / LPG Bill &amp; Booking</h3>
+            </div>
             <p>Pay gas bill &amp; book LPG cylinder for HP Gas, Bharat Gas, Indane.</p>
             <span class="srv-badge orange">Utility</span>
           </a>
 
-          <a class="srv-card" href="https://www.bsnl.co.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">📱</span><h3>Mobile Recharge &amp; Bill</h3></div>
+          <a class="srv-card" href="https://www.bsnl.co.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">📱</span>
+              <h3>Mobile Recharge &amp; Bill</h3>
+            </div>
             <p>Prepaid recharge and postpaid bill payment for all telecom operators.</p>
             <span class="srv-badge orange">Telecom</span>
           </a>
 
-          <a class="srv-card" href="https://www.airtel.in/dth" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">📡</span><h3>DTH Recharge</h3></div>
+          <a class="srv-card" href="https://www.airtel.in/dth" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">📡</span>
+              <h3>DTH Recharge</h3>
+            </div>
             <p>Recharge DTH connections — Tata Sky, Airtel, Dish TV, Sun Direct.</p>
             <span class="srv-badge orange">DTH</span>
           </a>
 
-          <a class="srv-card" href="https://www.bsnl.co.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">🌐</span><h3>Broadband / Internet Bill</h3></div>
+          <a class="srv-card" href="https://www.bsnl.co.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">🌐</span>
+              <h3>Broadband / Internet Bill</h3>
+            </div>
             <p>Pay BSNL broadband &amp; other ISP bills online without queue.</p>
             <span class="srv-badge orange">Internet</span>
           </a>
 
-          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">🏘️</span><h3>Property Tax Payment</h3></div>
+          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">🏘️</span>
+              <h3>Property Tax Payment</h3>
+            </div>
             <p>Pay annual property &amp; house tax to the municipal corporation.</p>
             <span class="srv-badge orange">Municipal</span>
           </a>
 
-          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#d97706;">
-            <div class="srv-card-top"><span class="srv-emoji">🚰</span><h3>Pipeline &amp; Drainage Charges</h3></div>
+          <a class="srv-card" href="https://municipal.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#d97706;">
+            <div class="srv-card-top"><span class="srv-emoji">🚰</span>
+              <h3>Pipeline &amp; Drainage Charges</h3>
+            </div>
             <p>Pay sewerage &amp; drainage charges to local urban bodies.</p>
             <span class="srv-badge orange">Municipal</span>
           </a>
@@ -574,38 +798,54 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://www.jansuraksha.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">❤️</span><h3>PMJJBY – Life Insurance</h3></div>
+          <a class="srv-card" href="https://www.jansuraksha.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#059669;">
+            <div class="srv-card-top"><span class="srv-emoji">❤️</span>
+              <h3>PMJJBY – Life Insurance</h3>
+            </div>
             <p>PM Jeevan Jyoti Bima Yojana – ₹2 lakh life cover at ₹436/year.</p>
             <span class="srv-badge green">Govt Scheme</span>
           </a>
 
-          <a class="srv-card" href="https://www.jansuraksha.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">🦺</span><h3>PMSBY – Accident Insurance</h3></div>
+          <a class="srv-card" href="https://www.jansuraksha.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#059669;">
+            <div class="srv-card-top"><span class="srv-emoji">🦺</span>
+              <h3>PMSBY – Accident Insurance</h3>
+            </div>
             <p>PM Suraksha Bima Yojana – ₹2 lakh accident cover at just ₹20/year.</p>
             <span class="srv-badge green">Govt Scheme</span>
           </a>
 
           <a class="srv-card" href="https://pmjay.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">🏥</span><h3>Ayushman Bharat (PMJAY)</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🏥</span>
+              <h3>Ayushman Bharat (PMJAY)</h3>
+            </div>
             <p>PM Jan Arogya Yojana – ₹5 lakh health cover for eligible families.</p>
             <span class="srv-badge green">PMJAY</span>
           </a>
 
           <a class="srv-card" href="https://pmfby.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">🌾</span><h3>PMFBY – Crop Insurance</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🌾</span>
+              <h3>PMFBY – Crop Insurance</h3>
+            </div>
             <p>PM Fasal Bima Yojana – protect crops from natural calamities &amp; pests.</p>
             <span class="srv-badge green">Agriculture</span>
           </a>
 
-          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">🚗</span><h3>Vehicle Insurance</h3></div>
+          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#059669;">
+            <div class="srv-card-top"><span class="srv-emoji">🚗</span>
+              <h3>Vehicle Insurance</h3>
+            </div>
             <p>Third-party &amp; comprehensive vehicle insurance renewal &amp; new policy.</p>
             <span class="srv-badge">Insurance</span>
           </a>
 
-          <a class="srv-card" href="https://www.irdai.gov.in/" target="_blank" rel="noopener" style="border-color:#059669;">
-            <div class="srv-card-top"><span class="srv-emoji">🏠</span><h3>Home Insurance</h3></div>
+          <a class="srv-card" href="https://www.irdai.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#059669;">
+            <div class="srv-card-top"><span class="srv-emoji">🏠</span>
+              <h3>Home Insurance</h3>
+            </div>
             <p>Protect your home from flood, fire and natural disasters with home insurance.</p>
             <span class="srv-badge">Insurance</span>
           </a>
@@ -625,37 +865,52 @@
         <div class="services-full-grid">
 
           <a class="srv-card" href="https://mpbse.nic.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">📝</span><h3>MP Board Exam Form</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">📝</span>
+              <h3>MP Board Exam Form</h3>
+            </div>
             <p>Fill Class 10 &amp; 12 MP Board exam forms and pay fee online.</p>
             <span class="srv-badge orange">MPBSE</span>
           </a>
 
           <a class="srv-card" href="https://mpbse.nic.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">📊</span><h3>Result / Marksheet Download</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">📊</span>
+              <h3>Result / Marksheet Download</h3>
+            </div>
             <p>Download board exam results &amp; digital marksheets from MPBSE portal.</p>
             <span class="srv-badge orange">MPBSE</span>
           </a>
 
-          <a class="srv-card" href="https://scholarships.gov.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">🎒</span><h3>Scholarship Application</h3></div>
+          <a class="srv-card" href="https://scholarships.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#ea580c;">
+            <div class="srv-card-top"><span class="srv-emoji">🎒</span>
+              <h3>Scholarship Application</h3>
+            </div>
             <p>Apply for NSP, MP scholarship portal – pre &amp; post matric scholarships.</p>
             <span class="srv-badge orange">Scholarship</span>
           </a>
 
-          <a class="srv-card" href="https://www.nios.ac.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">📚</span><h3>NIOS / IGNOU Enrollment</h3></div>
+          <a class="srv-card" href="https://www.nios.ac.in/" target="_blank" rel="noopener"
+            style="border-color:#ea580c;">
+            <div class="srv-card-top"><span class="srv-emoji">📚</span>
+              <h3>NIOS / IGNOU Enrollment</h3>
+            </div>
             <p>Enroll in NIOS open school or IGNOU distance education programs.</p>
             <span class="srv-badge orange">Open Learning</span>
           </a>
 
-          <a class="srv-card" href="https://www.pmgdisha.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">💻</span><h3>CSC Digital Literacy (PMGDISHA)</h3></div>
+          <a class="srv-card" href="https://www.pmgdisha.in/" target="_blank" rel="noopener"
+            style="border-color:#ea580c;">
+            <div class="srv-card-top"><span class="srv-emoji">💻</span>
+              <h3>CSC Digital Literacy (PMGDISHA)</h3>
+            </div>
             <p>PM Gramin Digital Saksharta Abhiyan – free digital literacy training.</p>
             <span class="srv-badge green">Free Course</span>
           </a>
 
           <a class="srv-card" href="https://ssc.gov.in/" target="_blank" rel="noopener" style="border-color:#ea580c;">
-            <div class="srv-card-top"><span class="srv-emoji">🏆</span><h3>Competitive Exam Form Filling</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🏆</span>
+              <h3>Competitive Exam Form Filling</h3>
+            </div>
             <p>Assistance with MPSC, SSC, IBPS, Railway &amp; other govt. exam forms.</p>
             <span class="srv-badge orange">Exam Form</span>
           </a>
@@ -674,134 +929,207 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://rationmitra.nic.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🍚</span><h3>Ration Card Services</h3></div>
+          <a class="srv-card" href="https://rationmitra.nic.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🍚</span>
+              <h3>Ration Card Services</h3>
+            </div>
             <p>New ration card application, corrections, member addition &amp; status check.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">PDS</span>
           </a>
 
           <a class="srv-card" href="https://nsap.nic.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👴</span><h3>Pension Services (NSAP)</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">👴</span>
+              <h3>Pension Services (NSAP)</h3>
+            </div>
             <p>Old age, widow &amp; disability pension registration under NSAP scheme.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">NSAP</span>
           </a>
 
-          <a class="srv-card" href="https://pmaymis.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🏠</span><h3>PM Awas Yojana (PMAY)</h3></div>
+          <a class="srv-card" href="https://pmaymis.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🏠</span>
+              <h3>PM Awas Yojana (PMAY)</h3>
+            </div>
             <p>Apply for housing under PMAY-G (rural) &amp; PMAY-U (urban) scheme.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">PMAY</span>
           </a>
 
-          <a class="srv-card" href="https://eshram.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👷</span><h3>eShram Registration</h3></div>
+          <a class="srv-card" href="https://eshram.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👷</span>
+              <h3>eShram Registration</h3>
+            </div>
             <p>Register unorganised workers on eShram portal for govt. benefits &amp; UAN.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">eShram</span>
           </a>
 
           <a class="srv-card" href="https://clc.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🪚</span><h3>Labour Card / BOCW Registration</h3></div>
+            <div class="srv-card-top"><span class="srv-emoji">🪚</span>
+              <h3>Labour Card / BOCW Registration</h3>
+            </div>
             <p>Construction worker registration for welfare schemes &amp; benefits.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Labour</span>
           </a>
 
-          <a class="srv-card" href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">💼</span><h3>PM SVANidhi (Street Vendor)</h3></div>
+          <a class="srv-card" href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">💼</span>
+              <h3>PM SVANidhi (Street Vendor)</h3>
+            </div>
             <p>Street vendor loan scheme application &amp; QR code payment setup.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">SVANidhi</span>
           </a>
 
-          <a class="srv-card" href="https://jaljeevanmission.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">💧</span><h3>Jal Jeevan Mission</h3></div>
+          <a class="srv-card" href="https://jaljeevanmission.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">💧</span>
+              <h3>Jal Jeevan Mission</h3>
+            </div>
             <p>Tap water connection application &amp; scheme registration under JJM.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">JJM</span>
           </a>
 
-          <a class="srv-card" href="https://swachhbharatmission.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🚽</span><h3>Swachh Bharat Mission</h3></div>
+          <a class="srv-card" href="https://swachhbharatmission.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🚽</span>
+              <h3>Swachh Bharat Mission</h3>
+            </div>
             <p>Apply for toilet construction grant under SBM-G &amp; SBM-U scheme.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">SBM</span>
           </a>
 
-          <a class="srv-card" href="https://samagra.gov.in/Default.aspx" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👨‍👩‍👧‍👦</span><h3>Samagra ID (Family ID)</h3></div>
+          <a class="srv-card" href="https://www.samagra.mp.gov.in/web/home" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👨‍👩‍👧‍👦</span>
+              <h3>Samagra portal 2.0 - (Family ID)</h3>
+            </div>
+            <p>MP Samagra portal 2.0 – family & member ID registration for all state schemes.</p>
+            <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Samagra MP</span>
+          </a>
+
+          <a class="srv-card" href="https://samagra.gov.in/Default.aspx" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👨‍👩‍👧‍👦</span>
+              <h3>Samagra ID (Family ID)</h3>
+            </div>
             <p>MP Samagra portal – family & member ID registration for all state schemes.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Samagra MP</span>
           </a>
 
-          <a class="srv-card" href="https://sambal.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🤝</span><h3>Sambal Yojana (Jan Kalyan)</h3></div>
+          <a class="srv-card" href="https://sambal.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🤝</span>
+              <h3>Sambal Yojana (Jan Kalyan)</h3>
+            </div>
             <p>Unorganised worker registration for MP Sambal – maternity, education & accident benefits.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Sambal MP</span>
           </a>
 
-          <a class="srv-card" href="https://eshram.gov.in/indexmain" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👷</span><h3>eShram Card (Unorganised Worker)</h3></div>
+          <a class="srv-card" href="https://eshram.gov.in/indexmain" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👷</span>
+              <h3>eShram Card (Unorganised Worker)</h3>
+            </div>
             <p>Register on eShram portal to get UAN card & access central govt. welfare schemes.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">eShram</span>
           </a>
 
-          <a class="srv-card" href="https://rcms.mp.gov.in/citizen/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">⚖️</span><h3>RCMS – Revenue Case Status</h3></div>
+          <a class="srv-card" href="https://rcms.mp.gov.in/citizen/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">⚖️</span>
+              <h3>RCMS – Revenue Case Status</h3>
+            </div>
             <p>Check revenue court case status, nakal & land dispute records via RCMS MP portal.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">RCMS MP</span>
           </a>
 
-          <a class="srv-card" href="https://ladlilaxmi.mp.gov.in/llyhome.aspx" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👧</span><h3>Ladli Laxmi Yojana</h3></div>
+          <a class="srv-card" href="https://ladlilaxmi.mp.gov.in/llyhome.aspx" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👧</span>
+              <h3>Ladli Laxmi Yojana</h3>
+            </div>
             <p>MP government scheme for girl child – education support & financial assistance.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Ladli Laxmi</span>
           </a>
 
-          <a class="srv-card" href="https://spr.samagra.gov.in/Default.aspx" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🏫</span><h3>Samagra Shiksha Pravesh</h3></div>
+          <a class="srv-card" href="https://spr.samagra.gov.in/Default.aspx" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🏫</span>
+              <h3>Samagra Shiksha Pravesh</h3>
+            </div>
             <p>School enrollment via Samagra Pravesh portal for children across Madhya Pradesh.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Samagra MP</span>
           </a>
 
-          <a class="srv-card" href="https://labour.mp.gov.in/Default.aspx" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🏗️</span><h3>MP Labour Department</h3></div>
+          <a class="srv-card" href="https://labour.mp.gov.in/Default.aspx" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🏗️</span>
+              <h3>MP Labour Department</h3>
+            </div>
             <p>Labour registration, BOCW welfare, construction worker schemes & grievance portal.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Labour MP</span>
           </a>
 
-          <a class="srv-card" href="https://abha.abdm.gov.in/abha/v3/register" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🏥</span><h3>ABHA Health ID</h3></div>
+          <a class="srv-card" href="https://abha.abdm.gov.in/abha/v3/register" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🏥</span>
+              <h3>ABHA Health ID</h3>
+            </div>
             <p>Create Ayushman Bharat Health Account (ABHA) for digital health records & services.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">ABDM</span>
           </a>
 
-          <a class="srv-card" href="https://svamitva.nic.in/svamitva/index.html" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🏘️</span><h3>SVAMITVA Scheme</h3></div>
+          <a class="srv-card" href="https://svamitva.nic.in/svamitva/index.html" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🏘️</span>
+              <h3>SVAMITVA Scheme</h3>
+            </div>
             <p>Property rights card for village households under PM SVAMITVA scheme.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">SVAMITVA</span>
           </a>
 
-          <a class="srv-card" href="https://sampada.mpigr.gov.in/#/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">📝</span><h3>Sampada – Property Registration</h3></div>
+          <a class="srv-card" href="https://sampada.mpigr.gov.in/#/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">📝</span>
+              <h3>Sampada – Property Registration</h3>
+            </div>
             <p>MP property & land registration, stamp duty payment via Sampada IGRS portal.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">MPIGR</span>
           </a>
 
-          <a class="srv-card" href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">💊</span><h3>Ayushman Bharat Beneficiary</h3></div>
+          <a class="srv-card" href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">💊</span>
+              <h3>Ayushman Bharat Beneficiary</h3>
+            </div>
             <p>Check eligibility & download Ayushman Bharat golden card from NHA portal.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">PMJAY</span>
           </a>
 
-          <a class="srv-card" href="https://cmladlibahna.mp.gov.in/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">👩</span><h3>CM Ladli Bahna Yojana</h3></div>
+          <a class="srv-card" href="https://cmladlibahna.mp.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">👩</span>
+              <h3>CM Ladli Bahna Yojana</h3>
+            </div>
             <p>MP government monthly financial assistance scheme for women – status & registration.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Ladli Bahna</span>
           </a>
 
-          <a class="srv-card" href="https://csmsmpscsc.mp.gov.in/rationmitra/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🛒</span><h3>Ration Mitra (MP PDS)</h3></div>
+          <a class="srv-card" href="https://csmsmpscsc.mp.gov.in/rationmitra/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🛒</span>
+              <h3>Ration Mitra (MP PDS)</h3>
+            </div>
             <p>MP ration card management, fair price shop details & PDS beneficiary status.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">PDS MP</span>
           </a>
 
-          <a class="srv-card" href="https://www.canva.com/" target="_blank" rel="noopener" style="border-color:#be185d;">
-            <div class="srv-card-top"><span class="srv-emoji">🎨</span><h3>Printing & Design (Canva)</h3></div>
+          <a class="srv-card" href="https://www.canva.com/" target="_blank" rel="noopener"
+            style="border-color:#be185d;">
+            <div class="srv-card-top"><span class="srv-emoji">🎨</span>
+              <h3>Printing & Design (Canva)</h3>
+            </div>
             <p>Design & print visiting cards, banners, certificates & documents using Canva.</p>
             <span class="srv-badge" style="background:#fdf2f8;color:#9d174d;">Design</span>
           </a>
@@ -820,32 +1148,47 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://sarathi.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#0284c7;">
-            <div class="srv-card-top"><span class="srv-emoji">🪪</span><h3>Driving Licence (New / Renewal)</h3></div>
+          <a class="srv-card" href="https://sarathi.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0284c7;">
+            <div class="srv-card-top"><span class="srv-emoji">🪪</span>
+              <h3>Driving Licence (New / Renewal)</h3>
+            </div>
             <p>Apply for learner's licence, permanent DL, and renewal through Parivahan portal.</p>
             <span class="srv-badge">Parivahan</span>
           </a>
 
-          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#0284c7;">
-            <div class="srv-card-top"><span class="srv-emoji">🚘</span><h3>Vehicle Registration Certificate</h3></div>
+          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0284c7;">
+            <div class="srv-card-top"><span class="srv-emoji">🚘</span>
+              <h3>Vehicle Registration Certificate</h3>
+            </div>
             <p>New RC application, address change &amp; RC renewal for all vehicle types.</p>
             <span class="srv-badge">Parivahan</span>
           </a>
 
-          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#0284c7;">
-            <div class="srv-card-top"><span class="srv-emoji">📋</span><h3>Fitness Certificate</h3></div>
+          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0284c7;">
+            <div class="srv-card-top"><span class="srv-emoji">📋</span>
+              <h3>Fitness Certificate</h3>
+            </div>
             <p>Assistance with vehicle fitness &amp; PUC certificate renewal.</p>
             <span class="srv-badge">Parivahan</span>
           </a>
 
-          <a class="srv-card" href="https://echallan.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#0284c7;">
-            <div class="srv-card-top"><span class="srv-emoji">💸</span><h3>Traffic Challan Payment</h3></div>
+          <a class="srv-card" href="https://echallan.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0284c7;">
+            <div class="srv-card-top"><span class="srv-emoji">💸</span>
+              <h3>Traffic Challan Payment</h3>
+            </div>
             <p>Pay pending traffic challans online via Parivahan &amp; e-Challan portal.</p>
             <span class="srv-badge">e-Challan</span>
           </a>
 
-          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener" style="border-color:#0284c7;">
-            <div class="srv-card-top"><span class="srv-emoji">🛵</span><h3>Vehicle Insurance Renewal</h3></div>
+          <a class="srv-card" href="https://vahan.parivahan.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#0284c7;">
+            <div class="srv-card-top"><span class="srv-emoji">🛵</span>
+              <h3>Vehicle Insurance Renewal</h3>
+            </div>
             <p>Renew two-wheeler, car &amp; commercial vehicle insurance policies.</p>
             <span class="srv-badge">Insurance</span>
           </a>
@@ -864,32 +1207,47 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://www.incometax.gov.in/" target="_blank" rel="noopener" style="border-color:#6d28d9;">
-            <div class="srv-card-top"><span class="srv-emoji">📊</span><h3>Income Tax (ITR) Filing</h3></div>
+          <a class="srv-card" href="https://www.incometax.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#6d28d9;">
+            <div class="srv-card-top"><span class="srv-emoji">📊</span>
+              <h3>Income Tax (ITR) Filing</h3>
+            </div>
             <p>File ITR-1 &amp; ITR-4 for salaried &amp; small business individuals.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">Income Tax</span>
           </a>
 
-          <a class="srv-card" href="https://www.gst.gov.in/" target="_blank" rel="noopener" style="border-color:#6d28d9;">
-            <div class="srv-card-top"><span class="srv-emoji">🧾</span><h3>GST Registration</h3></div>
+          <a class="srv-card" href="https://www.gst.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#6d28d9;">
+            <div class="srv-card-top"><span class="srv-emoji">🧾</span>
+              <h3>GST Registration</h3>
+            </div>
             <p>New GST registration for businesses crossing the turnover threshold.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">GST</span>
           </a>
 
-          <a class="srv-card" href="https://udyamregistration.gov.in/" target="_blank" rel="noopener" style="border-color:#6d28d9;">
-            <div class="srv-card-top"><span class="srv-emoji">🏭</span><h3>MSME / Udyam Registration</h3></div>
+          <a class="srv-card" href="https://udyamregistration.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#6d28d9;">
+            <div class="srv-card-top"><span class="srv-emoji">🏭</span>
+              <h3>MSME / Udyam Registration</h3>
+            </div>
             <p>Register micro &amp; small businesses on Udyam portal for govt. benefits.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">MSME</span>
           </a>
 
-          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener" style="border-color:#6d28d9;">
-            <div class="srv-card-top"><span class="srv-emoji">🏪</span><h3>Trade Licence</h3></div>
+          <a class="srv-card" href="https://mpedistrict.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#6d28d9;">
+            <div class="srv-card-top"><span class="srv-emoji">🏪</span>
+              <h3>Trade Licence</h3>
+            </div>
             <p>Apply for and renew trade/shop establishment licence from local body.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">Municipal</span>
           </a>
 
-          <a class="srv-card" href="https://www.tdscpc.gov.in/" target="_blank" rel="noopener" style="border-color:#6d28d9;">
-            <div class="srv-card-top"><span class="srv-emoji">📱</span><h3>TDS Certificate Download</h3></div>
+          <a class="srv-card" href="https://www.tdscpc.gov.in/" target="_blank" rel="noopener"
+            style="border-color:#6d28d9;">
+            <div class="srv-card-top"><span class="srv-emoji">📱</span>
+              <h3>TDS Certificate Download</h3>
+            </div>
             <p>Download Form 16 / 26AS TDS certificates from TRACES portal.</p>
             <span class="srv-badge" style="background:#f5f3ff;color:#6d28d9;">TRACES</span>
           </a>
@@ -908,26 +1266,38 @@
         </div>
         <div class="services-full-grid">
 
-          <a class="srv-card" href="https://www.irctc.co.in/" target="_blank" rel="noopener" style="border-color:#b45309;">
-            <div class="srv-card-top"><span class="srv-emoji">🚂</span><h3>Railway Ticket Booking (IRCTC)</h3></div>
+          <a class="srv-card" href="https://www.irctc.co.in/" target="_blank" rel="noopener"
+            style="border-color:#b45309;">
+            <div class="srv-card-top"><span class="srv-emoji">🚂</span>
+              <h3>Railway Ticket Booking (IRCTC)</h3>
+            </div>
             <p>Book train tickets through IRCTC – general, sleeper &amp; AC classes.</p>
             <span class="srv-badge orange">IRCTC</span>
           </a>
 
-          <a class="srv-card" href="https://www.mptransport.org/" target="_blank" rel="noopener" style="border-color:#b45309;">
-            <div class="srv-card-top"><span class="srv-emoji">🚌</span><h3>Bus Ticket Booking</h3></div>
+          <a class="srv-card" href="https://www.mptransport.org/" target="_blank" rel="noopener"
+            style="border-color:#b45309;">
+            <div class="srv-card-top"><span class="srv-emoji">🚌</span>
+              <h3>Bus Ticket Booking</h3>
+            </div>
             <p>Book MPSRTC &amp; private bus tickets for travel across Madhya Pradesh.</p>
             <span class="srv-badge orange">Bus</span>
           </a>
 
-          <a class="srv-card" href="https://www.airindia.in/" target="_blank" rel="noopener" style="border-color:#b45309;">
-            <div class="srv-card-top"><span class="srv-emoji">✈️</span><h3>Air Ticket Booking</h3></div>
+          <a class="srv-card" href="https://www.airindia.in/" target="_blank" rel="noopener"
+            style="border-color:#b45309;">
+            <div class="srv-card-top"><span class="srv-emoji">✈️</span>
+              <h3>Air Ticket Booking</h3>
+            </div>
             <p>Book domestic flight tickets from all major Indian carriers.</p>
             <span class="srv-badge orange">Flights</span>
           </a>
 
-          <a class="srv-card" href="https://www.irctctourism.com/" target="_blank" rel="noopener" style="border-color:#b45309;">
-            <div class="srv-card-top"><span class="srv-emoji">🏨</span><h3>Hotel Booking</h3></div>
+          <a class="srv-card" href="https://www.irctctourism.com/" target="_blank" rel="noopener"
+            style="border-color:#b45309;">
+            <div class="srv-card-top"><span class="srv-emoji">🏨</span>
+              <h3>Hotel Booking</h3>
+            </div>
             <p>Book government &amp; private hotels &amp; circuit houses for your travel.</p>
             <span class="srv-badge orange">Hotel</span>
           </a>
@@ -945,7 +1315,8 @@
       <p>Visit our center or WhatsApp us — we'll get it done quickly and affordably.</p>
       <div class="cta-btns">
         <a href="index.html#contact" class="btn btn-primary">📍 Visit / Contact Us</a>
-        <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20service" class="btn btn-outline" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20service"
+          class="btn btn-outline" target="_blank" rel="noopener">💬 WhatsApp Us</a>
       </div>
     </div>
   </section>
@@ -962,14 +1333,19 @@
           <span>💬</span> WhatsApp Channel
         </a>
         <p class="footer-copy">© 2025 Brajesh Pal CSC Center. All rights reserved.</p>
-        <p class="footer-copy" style="margin-top:4px;">Website by <strong style="color:#fff;">Sotam Patel</strong> · <a href="tel:+918871025543" style="color:#94a3b8;">+91 88710 25543</a></p>
+        <p class="footer-copy" style="margin-top:4px;">Website by <strong style="color:#fff;">Sotam Patel</strong> · <a
+            href="tel:+918871025543" style="color:#94a3b8;">+91 88710 25543</a></p>
       </div>
     </div>
   </footer>
 
   <!-- WhatsApp FAB -->
-  <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20CSC%20services" class="whatsapp-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20CSC%20services" class="whatsapp-fab"
+    target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
     <span class="fab-text">WhatsApp Us</span>
   </a>
 
@@ -984,7 +1360,7 @@
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    const tabs   = document.querySelectorAll('.filter-tab');
+    const tabs = document.querySelectorAll('.filter-tab');
     const blocks = document.querySelectorAll('.category-block');
     const searchInput = document.getElementById('serviceSearch');
 
@@ -992,7 +1368,7 @@
     function applyCategory(cat) {
       tabs.forEach(t => t.classList.remove('active'));
       const target = document.querySelector('[data-cat="' + cat + '"]') ||
-                     document.querySelector('[data-cat="all"]');
+        document.querySelector('[data-cat="all"]');
       target.classList.add('active');
       blocks.forEach(block => {
         block.style.display = (cat === 'all' || block.dataset.cat === cat) ? '' : 'none';
@@ -1022,9 +1398,9 @@
 
     function syncURL(q, cat) {
       const params = new URLSearchParams(window.location.search);
-      if (q)   { params.set('q', q);     params.delete('cat'); }
+      if (q) { params.set('q', q); params.delete('cat'); }
       else if (cat && cat !== 'all') { params.set('cat', cat); params.delete('q'); }
-      else     { params.delete('q'); params.delete('cat'); }
+      else { params.delete('q'); params.delete('cat'); }
       const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       history.replaceState(null, '', newURL);
     }
@@ -1032,7 +1408,7 @@
     /* ── init from URL on page load ── */
     (function () {
       const params = new URLSearchParams(window.location.search);
-      const q   = params.get('q')   || '';
+      const q = params.get('q') || '';
       const cat = params.get('cat') || 'all';
       if (q) {
         searchInput.value = q;
@@ -1060,4 +1436,5 @@
     });
   </script>
 </body>
+
 </html>

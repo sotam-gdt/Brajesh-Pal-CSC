@@ -435,7 +435,209 @@
     <span class="fab-text">Chat on WhatsApp</span>
   </a>
 
+
+
   <script src="main.js"></script>
 </body>
 
 </html>
+
+
+<!-- This is a popup start -->
+<div id="welcomePopup" class="popup-overlay">
+  <div class="popup-box">
+
+    <span class="tag">FREE JOB ALERT</span>
+
+    <h2>Get Instant Updates on WhatsApp</h2>
+
+    <p>
+      Receive latest jobs, admit cards, results, government schemes,
+      important links and useful updates directly on WhatsApp.
+    </p>
+
+    <ul>
+      <li>✅ Daily Verified Job Updates</li>
+      <li>✅ Government Scheme Notifications</li>
+      <li>✅ Admit Card & Result Alerts</li>
+      <li>✅ MP Government Services</li>
+    </ul>
+
+    <!-- WhatsApp Channels -->
+    <div class="channel-list">
+
+      <a href="https://whatsapp.com/channel/0029Vax804j2UPB8wsZU4B05" target="_blank" class="btn whatsapp">
+        📢 MP Jobs & Recruitment
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029Vb6f373GU3BG8yixL43e" target="_blank" class="btn whatsapp">
+        🎓 Education & Exam Updates
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029Vb6VGha3mFYA58GqZO0O" target="_blank" class="btn whatsapp">
+        🏛️ MP Government Services
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VbCCXQGEAKWKbBjymC1E" target="_blank" class="btn whatsapp">
+        🌾 Land Records & Survey Updates
+      </a>
+      <a href="https://whatsapp.com/channel/0029Vb5exDp3WHTgOhqOOf0k" target="_blank" class="btn whatsapp">
+        🛠️ 𝐏𝐚𝐥 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐓𝐨𝐨𝐥 𝐒𝐚𝐭𝐚𝐢 - 𝐂𝐲𝐛𝐞𝐫 𝐂𝐚𝐟𝐞 𝐓𝐨𝐨𝐥𝐬
+      </a>
+
+    </div>
+
+    <button id="continueBtn" class="continue">
+      Continue to Website
+    </button>
+
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("welcomePopup");
+
+  const lastShown = localStorage.getItem("popupTime");
+
+  const now = Date.now();
+
+  const oneDay = 24 * 60 * 60 * 1000;
+
+  if (lastShown && (now - lastShown) < oneDay) {
+
+    popup.style.display = "none";
+
+  }
+
+  document.getElementById("continueBtn").onclick = function () {
+
+    popup.style.display = "none";
+
+    localStorage.setItem("popupTime", now);
+
+  };
+</script>
+<STYLE>
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  .popup-box {
+
+    width: 420px;
+    max-width: 95%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    animation: popup .4s ease;
+  }
+
+  @keyframes popup {
+
+    from {
+
+      transform: scale(.7);
+      opacity: 0;
+
+    }
+
+    to {
+
+      transform: scale(1);
+      opacity: 1;
+
+    }
+
+  }
+
+  .tag {
+
+    display: inline-block;
+    background: #e7ffe9;
+    color: #16a34a;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+  }
+
+  .popup-box h2 {
+
+    margin: 10px 0;
+
+  }
+
+  .popup-box p {
+
+    color: #666;
+    font-size: 15px;
+    line-height: 24px;
+
+  }
+
+  .popup-box ul {
+
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+
+  }
+
+  .popup-box li {
+
+    margin: 10px 0;
+
+  }
+
+  .btn {
+
+    display: block;
+    text-decoration: none;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #fff;
+
+  }
+
+  .whatsapp {
+
+    background: #25D366;
+
+  }
+
+  .telegram {
+
+    background: #229ED9;
+
+  }
+
+  .continue {
+
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+
+  }
+
+  .continue:hover {
+
+    background: #f7f7f7;
+
+  }
+</STYLE>
+<!-- This is a popup End -->
