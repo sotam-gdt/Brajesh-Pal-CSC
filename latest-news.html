@@ -5,23 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Latest News & Updates – Brajesh Pal CSC Center</title>
-  <meta name="description"
-    content="Latest government scheme updates, CSC notices, application deadlines, agriculture, education, banking and citizen service news from Brajesh Pal CSC Center." />
-  <meta name="keywords"
-    content="latest news CSC Satai, government scheme updates Chhatarpur, MP government news, CSC updates, Satai latest news" />
+  <title>Breaking News – Brajesh Pal CSC Center</title>
+  <meta name="description" content="Latest breaking news and important updates from Brajesh Pal CSC Center." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://brajesh-pal-csc.vercel.app/latest-news.html" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Brajesh Pal CSC Center" />
-  <meta property="og:title" content="Latest News & Updates – Brajesh Pal CSC Center" />
-  <meta property="og:description" content="Latest government schemes, CSC notices and citizen service updates." />
-  <meta property="og:url" content="https://brajesh-pal-csc.vercel.app/latest-news.html" />
-  <meta property="og:image" content="https://brajesh-pal-csc.vercel.app/csc-logo.jpg" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/jpeg" href="csc-logo.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
@@ -35,27 +25,131 @@
       --news-muted: #64748b;
       --news-border: #e5e7eb;
       --news-orange: #f97316;
-      --news-green: #16a34a;
-      --news-purple: #7c3aed;
+      --breaking: #dc2626;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       background: var(--news-bg);
       color: var(--news-text);
     }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* =====================================================
+       HEADER - SAME THEME
+    ===================================================== */
+
+    #header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(7, 21, 61, 0.97);
+      transition: box-shadow 0.25s ease;
+    }
+
+    #header.scrolled {
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .logo-title {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .logo-sub {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, .65);
+      font-size: 9px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, .86);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .news-hero {
       padding: 115px 0 70px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(160deg, #050d1f 0%, #0a1f6e 52%, #07153d 100%);
+      background: linear-gradient(160deg,
+          #050d1f 0%,
+          #0a1f6e 52%,
+          #07153d 100%);
     }
 
     .news-hero::before {
@@ -64,8 +158,12 @@
       inset: 0;
       pointer-events: none;
       background:
-        radial-gradient(circle at 15% 30%, rgba(26, 86, 219, .30), transparent 35%),
-        radial-gradient(circle at 85% 20%, rgba(249, 115, 22, .16), transparent 30%);
+        radial-gradient(circle at 15% 30%,
+          rgba(26, 86, 219, .30),
+          transparent 35%),
+        radial-gradient(circle at 85% 20%,
+          rgba(220, 38, 38, .18),
+          transparent 30%);
     }
 
     .news-hero-inner {
@@ -93,6 +191,42 @@
       font-size: clamp(30px, 5vw, 50px);
       line-height: 1.15;
       font-weight: 800;
+    }
+
+    .breaking-heading {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 7px 13px;
+      border-radius: 50px;
+      background: rgba(220, 38, 38, .18);
+      border: 1px solid rgba(248, 113, 113, .35);
+      color: #fecaca;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .7px;
+    }
+
+    .breaking-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 0 5px rgba(239, 68, 68, .12);
+      animation: breakingPulse 1.4s infinite;
+    }
+
+    @keyframes breakingPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .35;
+      }
     }
 
     .news-hero p {
@@ -128,52 +262,59 @@
       font-size: 20px;
     }
 
-    .news-filter-bar {
-      position: sticky;
-      top: 72px;
-      z-index: 40;
-      padding: 16px 0;
+    /* =====================================================
+       BREAKING NEWS BAR
+       Only one category: Breaking News
+    ===================================================== */
+
+    .breaking-bar {
       background: #0d1b3e;
       border-bottom: 1px solid rgba(255, 255, 255, .10);
       box-shadow: 0 3px 18px rgba(0, 0, 0, .18);
     }
 
-    .news-filters {
+    .breaking-bar-inner {
+      min-height: 54px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 14px;
+      overflow: hidden;
     }
 
-    .news-filter {
-      border: 1px solid rgba(255, 255, 255, .18);
-      border-radius: 50px;
-      padding: 8px 16px;
-      background: rgba(255, 255, 255, .07);
-      color: rgba(255, 255, 255, .82);
-      cursor: pointer;
-      font: inherit;
-      font-size: 12px;
-      font-weight: 600;
-      transition: .2s ease;
-    }
-
-    .news-filter:hover,
-    .news-filter.active {
-      background: var(--news-blue);
-      border-color: var(--news-blue);
+    .breaking-label {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .5px;
     }
+
+    .breaking-label span {
+      color: #f87171;
+    }
+
+    .breaking-info {
+      color: rgba(255, 255, 255, .68);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
 
     .news-section {
       padding: 55px 0 80px;
-      background: #111827;
     }
 
     .news-toolbar {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
       gap: 15px;
       margin-bottom: 24px;
@@ -181,8 +322,18 @@
 
     .news-toolbar h2 {
       margin: 0;
-      font-size: 25px;
       color: #111827;
+      font-size: 25px;
+    }
+
+    .news-toolbar-kicker {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--breaking);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .news-count {
@@ -191,42 +342,38 @@
       white-space: nowrap;
     }
 
+    /* =====================================================
+       NEWS GRID
+    ===================================================== */
+
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
 
-
     .news-card {
       display: block;
+      overflow: hidden;
       color: inherit;
       text-decoration: none;
-      cursor: pointer;
+      background: #fff;
+      border: 1px solid var(--news-border);
+      border-radius: 18px;
+      box-shadow: 0 5px 22px rgba(15, 23, 42, .07);
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, .13);
     }
 
     .news-card:focus-visible {
       outline: 3px solid rgba(26, 86, 219, .45);
       outline-offset: 3px;
-    }
-
-    .news-card {
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--news-border);
-      border-radius: 18px;
-      box-shadow: 0 5px 22px rgba(15, 23, 42, .07);
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-
-    .news-card:hover,
-    .news-card:hover h3 {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 34px rgba(15, 23, 42, .13);
-    }
-
-    .news-card.hidden {
-      display: none;
     }
 
     .news-image {
@@ -252,7 +399,20 @@
       position: absolute;
       left: 14px;
       top: 14px;
-      padding: 5px 10px;
+      padding: 6px 10px;
+      border-radius: 50px;
+      color: #fff;
+      background: rgba(185, 28, 28, .92);
+      backdrop-filter: blur(6px);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .image-count {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      padding: 6px 10px;
       border-radius: 50px;
       color: #fff;
       background: rgba(17, 24, 39, .78);
@@ -266,7 +426,7 @@
     }
 
     .news-date {
-      color: var(--news-blue);
+      color: var(--breaking);
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
@@ -285,6 +445,11 @@
       color: var(--news-muted);
       font-size: 13px;
       line-height: 1.65;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .news-footer {
@@ -300,18 +465,21 @@
     .news-tag {
       padding: 4px 9px;
       border-radius: 50px;
-      background: #eef4ff;
-      color: #1a56db;
+      background: #fff1f2;
+      color: var(--breaking);
       font-size: 10px;
       font-weight: 700;
     }
 
     .news-link {
       color: var(--news-blue);
-      text-decoration: none;
       font-size: 12px;
       font-weight: 700;
     }
+
+    /* =====================================================
+       EMPTY
+    ===================================================== */
 
     .news-empty {
       display: none;
@@ -341,6 +509,10 @@
       margin: 0;
       font-size: 13px;
     }
+
+    /* =====================================================
+       CTA
+    ===================================================== */
 
     .news-cta {
       padding: 58px 0;
@@ -390,13 +562,110 @@
       background: rgba(255, 255, 255, .08);
     }
 
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer {
+      background: #07153d;
+      color: #fff;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer-sub,
+    .footer-copy {
+      color: #94a3b8;
+      font-size: 12px;
+      margin-top: 7px !important;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .wa-channel-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #fff;
+      text-decoration: none;
+      background: #16a34a;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =====================================================
+       WHATSAPP FAB
+    ===================================================== */
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 50px;
+      background: #16a34a;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
     @media (max-width: 900px) {
       .news-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 65px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        background: #07153d;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      }
+
+      nav ul.open {
+        display: flex;
+      }
     }
 
     @media (max-width: 620px) {
+      .container {
+        width: min(100% - 20px, 1180px);
+      }
+
       .news-hero {
         padding: 100px 0 55px;
       }
@@ -418,24 +687,25 @@
         flex-direction: column;
       }
 
-      .news-filter-bar {
-        top: 64px;
+      .footer-inner {
+        flex-direction: column;
       }
 
-      .news-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 2px;
-        scrollbar-width: none;
+      .footer-right {
+        text-align: left;
       }
 
-      .news-filters::-webkit-scrollbar {
+      .whatsapp-fab {
+        right: 14px;
+        bottom: 14px;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .fab-text {
         display: none;
-      }
-
-      .news-filter {
-        flex: 0 0 auto;
       }
     }
   </style>
@@ -443,373 +713,665 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
   <header id="header">
+
     <div class="container nav-wrap">
-      <a href="index.html" class="logo" style="text-decoration:none;">
+
+      <a href="index.html" class="logo">
+
         <img src="csc-logo.jpg" alt="CSC Logo" onerror="this.style.display='none'" />
+
         <div>
-          <span class="logo-title">Smart Portal</span>
-          <span class="logo-sub">Common Service Centre · Madhya Pradesh</span>
+          <span class="logo-title">
+            Smart Portal
+          </span>
+
+          <span class="logo-sub">
+            Common Service Centre · Madhya Pradesh
+          </span>
         </div>
+
       </a>
 
+
       <nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          ☰
+        </button>
+
         <ul id="navLinks">
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="latest-news.html" style="color:var(--blue);font-weight:700;">Latest News</a></li>
-          <li><a href="download-forms.html">Download</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+
+          <li>
+            <a href="index.html#home">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="services.html">
+              Services
+            </a>
+          </li>
+
+          <li>
+            <a href="latest-news.html" style="color:#fff;font-weight:700;">
+              Latest News
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#about">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#contact">
+              Contact
+            </a>
+          </li>
+
         </ul>
+
       </nav>
+
     </div>
+
   </header>
 
-  <!-- HERO -->
+
+  <!-- =====================================================
+       HERO
+       No category filter here.
+       Default page = Breaking News.
+  ===================================================== -->
+
   <section class="news-hero">
+
     <div class="container news-hero-inner">
+
       <div class="news-breadcrumb">
-        <a href="index.html">Home</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
         <span>›</span>
-        <span>Latest News</span>
+
+        <span>
+          Breaking News
+        </span>
+
       </div>
 
-      <h1>Latest News &amp; Updates</h1>
+
+      <div class="breaking-heading">
+
+        <span class="breaking-dot"></span>
+
+        BREAKING NEWS
+
+      </div>
+
+
+      <h1>
+        Breaking News &amp; Updates
+      </h1>
+
+
       <p>
-        Stay updated with important government schemes, CSC notices,
-        application deadlines and citizen service information.
+        Get the latest important updates, announcements,
+        government news and citizen service information.
       </p>
 
+
       <div class="news-search">
-        <input type="search" id="newsSearch" placeholder="Search news, schemes, services…" autocomplete="off"
-          aria-label="Search news" />
-        <span>🔍</span>
+
+        <input type="search" id="newsSearch" placeholder="Search breaking news..." autocomplete="off"
+          aria-label="Search breaking news" />
+
+        <span>
+          🔍
+        </span>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- FILTER -->
-  <div class="news-filter-bar">
-    <div class="container">
-      <div class="news-filters" role="tablist" aria-label="News categories">
-        <button class="news-filter active" data-filter="all">All News</button>
-        <button class="news-filter" data-filter="government">Government</button>
-        <button class="news-filter" data-filter="csc">CSC Updates</button>
-        <button class="news-filter" data-filter="agriculture">Agriculture</button>
-        <button class="news-filter" data-filter="education">Education</button>
-        <button class="news-filter" data-filter="banking">Banking</button>
-        <button class="news-filter" data-filter="documents">Documents</button>
-        <button class="news-filter" data-filter="jobs">Jobs &amp; Exams</button>
+
+  <!-- =====================================================
+       ONLY BREAKING NEWS BAR
+  ===================================================== -->
+
+  <div class="breaking-bar">
+
+    <div class="container breaking-bar-inner">
+
+      <div class="breaking-label">
+        <span>●</span>
+        BREAKING NEWS
       </div>
+
+      <div class="breaking-info" id="breakingTicker">
+        Latest important updates
+      </div>
+
     </div>
+
   </div>
 
-  <!-- NEWS -->
+
+  <!-- =====================================================
+       NEWS
+  ===================================================== -->
+
   <main class="news-section">
+
     <div class="container">
 
       <div class="news-toolbar">
-        <h2>Recent Updates</h2>
-        <span class="news-count" id="newsCount">8 updates</span>
+
+        <div>
+
+          <span class="news-toolbar-kicker">
+            Latest
+          </span>
+
+          <h2>
+            Breaking News
+          </h2>
+
+        </div>
+
+
+        <span class="news-count" id="newsCount">
+          Showing 0 updates
+        </span>
+
       </div>
+
 
       <div class="news-grid" id="newsGrid">
-
-        <a class="news-card"
-          href="https://www.peptechtime.com/posts/55-year-old-passenger-seriously-injured-after-falling-from-moving-train-anwar?fbclid=IwY2xjawUCaYRwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMXZMd3lCVUZmald0NlJPcjlzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEer-nrzoshh15Efq3-pb8JXJ-RVPr3rNKXUk-z0yxXsGDdZ7nHOPUQbmrtjJs_aem_gYJumE4LLMst9enFF33vIw"
-          data-category="government" data-search="government scheme citizen services latest government update">
-          <div class="news-image">
-            <img src="https://d2d12s4eh5fw2h.cloudfront.net/uploads/2026/08/chptrainaccident.webp"
-              alt="Government service update" loading="lazy">
-            <span class="news-category">Government</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Government Update</div>
-            <h3 style="color: red;">#BreakingNews: छतरपुर में चलती ट्रेन से गिरा यात्री, पुलिस वालों ने पहुंचाया अस्पताल
-              पूरी खबर कमेंट में</h3>
-            <!-- <p>Check the latest eligibility, application requirements and official portal information before submitting
-              an application.</p> -->
-            <div class="news-footer">
-              <span class="news-tag">Citizen Services</span>
-              <span class="news-link">View Services →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="csc"
-          data-search="csc common service centre digital seva latest update notice">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
-              alt="CSC digital service update" loading="lazy">
-            <span class="news-category">CSC Updates</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">CSC Update</div>
-            <h3>CSC Digital Services &amp; Online Application Updates</h3>
-            <p>New online services and portal changes may affect documents, application processes and verification
-              requirements.</p>
-            <div class="news-footer">
-              <span class="news-tag">CSC</span>
-              <span class="news-link">Explore →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="https://pmkisan.gov.in/" target="_blank" rel="noopener" data-category="agriculture"
-          data-search="pm kisan agriculture farmer crop insurance kisan latest">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
-              alt="Agriculture and farmer update" loading="lazy">
-            <span class="news-category">Agriculture</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Agriculture</div>
-            <h3>Farmer Schemes, PM-KISAN &amp; Crop Insurance Updates</h3>
-            <p>Keep your farmer registration, land records and other required details ready for scheme applications and
-              benefits.</p>
-            <div class="news-footer">
-              <span class="news-tag">Farmers</span>
-              <span class="news-link">Official Portal →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="education"
-          data-search="education scholarship student scholarship form exam admission update">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
-              alt="Education and scholarship update" loading="lazy">
-            <span class="news-category">Education</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Education</div>
-            <h3>Scholarship, Admission &amp; Student Form Updates</h3>
-            <p>Students should check application windows, required certificates and official instructions before
-              submitting forms.</p>
-            <div class="news-footer">
-              <span class="news-tag">Students</span>
-              <span class="news-link">Services →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="banking"
-          data-search="banking finance dbt account aadhaar banking csc update">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
-              alt="Banking service update" loading="lazy">
-            <span class="news-category">Banking</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Banking &amp; Finance</div>
-            <h3>Banking, DBT &amp; Financial Service Information</h3>
-            <p>Before using banking or DBT services, verify account details, Aadhaar linkage requirements and official
-              instructions.</p>
-            <div class="news-footer">
-              <span class="news-tag">Finance</span>
-              <span class="news-link">View Services →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="documents"
-          data-search="aadhaar pan documents certificate birth death domicile income e kyc">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
-              alt="Document services update" loading="lazy">
-            <span class="news-category">Documents</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Documents</div>
-            <h3>Aadhaar, PAN &amp; Certificate Service Updates</h3>
-            <p>Keep original documents and valid mobile numbers ready for identity, certificate, KYC and application
-              services.</p>
-            <div class="news-footer">
-              <span class="news-tag">Documents</span>
-              <span class="news-link">View Services →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="jobs"
-          data-search="job vacancy recruitment government exam admit card result application">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
-              alt="Jobs and exams update" loading="lazy">
-            <span class="news-category">Jobs & Exams</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">Jobs &amp; Exams</div>
-            <h3>Recruitment, Exam Form &amp; Admit Card Updates</h3>
-            <p>Check official recruitment notices for eligibility, application deadlines, fees, admit cards and results.
-            </p>
-            <div class="news-footer">
-              <span class="news-tag">Recruitment</span>
-              <span class="news-link">Get Help →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="news-card" href="services.html" data-category="government"
-          data-search="mp madhya pradesh citizen service local government update certificate portal">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
-              alt="Madhya Pradesh citizen service update" loading="lazy">
-            <span class="news-category">Government</span>
-          </div>
-          <div class="news-content">
-            <div class="news-date">MP Citizen Services</div>
-            <h3>Madhya Pradesh Online Citizen Service Updates</h3>
-            <p>Use the relevant official portal for applications and verify the latest requirements before visiting the
-              CSC center.</p>
-            <div class="news-footer">
-              <span class="news-tag">Madhya Pradesh</span>
-              <span class="news-link">Find Service →</span>
-            </div>
-          </div>
-        </a>
-
       </div>
+
 
       <div class="news-empty" id="newsEmpty">
-        <div class="empty-icon">🔎</div>
-        <h3>No news found</h3>
-        <p>Try another keyword or select a different category.</p>
+
+        <div class="empty-icon">
+          🔎
+        </div>
+
+        <h3>
+          No Breaking News Found
+        </h3>
+
+        <p>
+          Try another keyword.
+        </p>
+
       </div>
 
     </div>
+
   </main>
 
-  <!-- CTA -->
+
+  <!-- =====================================================
+       CTA
+  ===================================================== -->
+
   <section class="news-cta">
+
     <div class="container">
-      <h2>Need Help With an Application?</h2>
-      <p>Visit Brajesh Pal CSC Center or contact us on WhatsApp for assistance.</p>
+
+      <h2>
+        Need Help With an Application?
+      </h2>
+
+      <p>
+        Visit Brajesh Pal CSC Center or contact us on WhatsApp
+        for assistance.
+      </p>
+
       <div class="news-cta-buttons">
-        <a href="index.html#contact" class="news-btn news-btn-primary">📍 Visit / Contact Us</a>
+
+        <a href="index.html#contact" class="news-btn news-btn-primary">
+          📍 Visit / Contact Us
+        </a>
+
+
         <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20latest%20news%20update"
-          class="news-btn news-btn-outline" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+          class="news-btn news-btn-outline" target="_blank" rel="noopener">
+          💬 WhatsApp Us
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
   <footer class="footer">
+
     <div class="container footer-inner">
+
       <div>
-        <p><strong>Brajesh Pal CSC Center</strong> — Madhya Pradesh</p>
-        <p class="footer-sub">Authorized Common Service Centre under Digital India</p>
-      </div>
-      <div class="footer-right">
-        <a href="https://wa.me/919669246329" class="wa-channel-btn" target="_blank" rel="noopener">
-          <span>💬</span> WhatsApp Channel
-        </a>
-        <p class="footer-copy">© 2026 Brajesh Pal CSC Center. All rights reserved.</p>
-        <p class="footer-copy" style="margin-top:4px;">
-          Website by <strong style="color:#fff;">Sotam Patel</strong> ·
-          <a href="tel:+918871025543" style="color:#94a3b8;">+91 88710 25543</a>
+
+        <p>
+          <strong>
+            Brajesh Pal CSC Center
+          </strong>
+          — Madhya Pradesh
         </p>
+
+        <p class="footer-sub">
+          Authorized Common Service Centre under Digital India
+        </p>
+
       </div>
+
+
+      <div class="footer-right">
+
+        <a href="https://wa.me/919669246329" class="wa-channel-btn" target="_blank" rel="noopener">
+          <span>💬</span>
+          WhatsApp Channel
+        </a>
+
+        <p class="footer-copy">
+          © 2026 Brajesh Pal CSC Center.
+          All rights reserved.
+        </p>
+
+        <p class="footer-copy">
+
+          Website by
+          <strong style="color:#fff;">
+            Sotam Patel
+          </strong>
+
+          ·
+
+          <a href="tel:+918871025543" style="color:#94a3b8;">
+            +91 88710 25543
+          </a>
+
+        </p>
+
+      </div>
+
     </div>
+
   </footer>
 
-  <!-- WHATSAPP FAB -->
+
+  <!-- =====================================================
+       WHATSAPP FAB
+  ===================================================== -->
+
   <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20latest%20news%20update"
     class="whatsapp-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path
-        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-    </svg>
-    <span class="fab-text">WhatsApp Us</span>
+
+    <span style="font-size:22px;">
+      💬
+    </span>
+
+    <span class="fab-text">
+      WhatsApp Us
+    </span>
+
   </a>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
   <script>
-    // Mobile menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+
+    /* ===================================================
+       MOBILE MENU
+    =================================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
 
     if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
+
+      menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("open");
+
       });
+
     }
 
-    // Header scroll
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (header) header.classList.toggle('scrolled', window.scrollY > 60);
+
+    /* ===================================================
+       HEADER SCROLL
+    =================================================== */
+
+    const header =
+      document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (header) {
+
+        header.classList.toggle(
+          "scrolled",
+          window.scrollY > 60
+        );
+
+      }
+
     });
 
-    // News category + search filter
-    const filterButtons = document.querySelectorAll('.news-filter');
-    const newsCards = document.querySelectorAll('.news-card');
-    const searchInput = document.getElementById('newsSearch');
-    const newsCount = document.getElementById('newsCount');
-    const newsEmpty = document.getElementById('newsEmpty');
 
-    let activeCategory = 'all';
+    /* ===================================================
+       BREAKING NEWS ARRAY
 
-    function filterNews() {
-      const query = searchInput.value.trim().toLowerCase();
-      let visible = 0;
+       IMPORTANT:
 
-      newsCards.forEach(card => {
-        const category = card.dataset.category || '';
-        const searchText = (card.dataset.search || '') + ' ' + card.textContent;
-        const categoryMatch = activeCategory === 'all' || category === activeCategory;
-        const searchMatch = !query || searchText.toLowerCase().includes(query);
+       Only Breaking News is used.
 
-        const show = categoryMatch && searchMatch;
-        card.classList.toggle('hidden', !show);
+       images[] can contain:
+         1 image
+         2 images
+         3 images
+         ...any number
 
-        if (show) visible++;
-      });
+       The FIRST image is used on the card.
 
-      newsCount.textContent = `${visible} update${visible === 1 ? '' : 's'}`;
-      newsEmpty.classList.toggle('show', visible === 0);
+       If you later create a detail page, the SAME
+       images array can be used there as a gallery.
+
+       link:
+         Internal:
+         "news-detail-1.html"
+
+         External:
+         "https://example.com/"
+    =================================================== */
+
+    const breakingNews = [
+
+      {
+        title:
+          "#BreakingNews: छतरपुर में चलती ट्रेन से गिरा यात्री, पुलिस वालों ने पहुंचाया अस्पतालपूरी खबर कमेंट में",
+
+        date:
+          "31 August 2026",
+
+        description:
+          "ईशानगर (छतरपुर)। छतरपुर से बीना की ओर जा रही यात्री ट्रेन से गिरकर 55 वर्षीय अधेड़ गंभीर रूप से घायल हो गए। घायल यात्री की पहचान अनवर खान (उम्र 55 वर्ष), मूल निवासी टीकमगढ़ एवं हाल निवासी नारायणपुर रोड छतरपुर के रूप में हुई है। प्राप्त जानकारी के अनुसार, ईशानगर रेलवे स्टेशन से आगे निकलते ही अनवर खान अचानक संतुलन बिगड़ने या किसी अज्ञात कारणवश चलती ट्रेन से नीचे गिर पड़े, जिससे वे ट्रैक किनारे गंभीर रूप से घायल होकर तड़पने लगे।",
+
+        images: [
+          "https://d2d12s4eh5fw2h.cloudfront.net/uploads/2026/08/chptrainaccident.webp",
+          "https://d2d12s4eh5fw2h.cloudfront.net/uploads/2026/08/chptrainaccident.webp",
+          "https://d2d12s4eh5fw2h.cloudfront.net/uploads/2026/08/chptrainaccident.webp"
+        ],
+
+        link:
+          "https://www.peptechtime.com/posts/55-year-old-passenger-seriously-injured-after-falling-from-moving-train-anwar?fbclid=IwY2xjawUCawNwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMXZMd3lCVUZmald0NlJPcjlzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEetXomngx0GiWYGefzEmefnBudGGcFoT10mF5DQ-uQmPyUCgJMStZVkc5OI6w_aem_WInRCu2sLXcOIQ3vFY5IAg"
+      },
+
+
+    ];
+
+
+    /* ===================================================
+       ELEMENTS
+    =================================================== */
+
+    const newsGrid =
+      document.getElementById("newsGrid");
+
+    const searchInput =
+      document.getElementById("newsSearch");
+
+    const newsCount =
+      document.getElementById("newsCount");
+
+    const newsEmpty =
+      document.getElementById("newsEmpty");
+
+    const breakingTicker =
+      document.getElementById("breakingTicker");
+
+
+    /* ===================================================
+       ESCAPE HTML
+    =================================================== */
+
+    function escapeHtml(value) {
+
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
     }
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        activeCategory = button.dataset.filter;
-        filterNews();
 
-        const params = new URLSearchParams(window.location.search);
-        if (activeCategory === 'all') {
-          params.delete('category');
-        } else {
-          params.set('category', activeCategory);
-        }
-        if (searchInput.value.trim()) {
-          params.set('q', searchInput.value.trim());
-        } else {
-          params.delete('q');
-        }
-        history.replaceState(null, '', `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`);
-      });
-    });
+    /* ===================================================
+       RENDER NEWS
 
-    searchInput.addEventListener('input', filterNews);
+       Default:
+       ALL = Breaking News only
+    =================================================== */
 
-    // Restore filters from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlCategory = urlParams.get('category');
-    const urlQuery = urlParams.get('q');
+    function renderNews() {
 
-    if (urlQuery) searchInput.value = urlQuery;
+      const query =
+        searchInput.value
+          .trim()
+          .toLowerCase();
 
-    if (urlCategory && [...filterButtons].some(btn => btn.dataset.filter === urlCategory)) {
-      activeCategory = urlCategory;
-      filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === urlCategory));
+
+      const filtered =
+        breakingNews.filter(news => {
+
+          const searchableText = [
+
+            news.title,
+            news.description,
+            news.date,
+            "breaking news"
+
+          ]
+            .join(" ")
+            .toLowerCase();
+
+
+          return (
+            !query ||
+            searchableText.includes(query)
+          );
+
+        });
+
+
+      newsGrid.innerHTML =
+        filtered.map((news, index) => {
+
+          const images =
+            Array.isArray(news.images) &&
+              news.images.length
+              ? news.images
+              : ["images/news-placeholder.jpg"];
+
+
+          const firstImage =
+            images[0];
+
+
+          const imageCount =
+            images.length > 1
+              ? `
+                <span class="image-count">
+                  📷 ${images.length}
+                </span>
+              `
+              : "";
+
+
+          return `
+
+            <a
+              class="news-card"
+              href="${escapeHtml(news.link)}"
+              target="_blank"
+            >
+
+              <div class="news-image">
+
+                <img
+                  src="${escapeHtml(firstImage)}"
+                  alt="${escapeHtml(news.title)}"
+                  loading="lazy"
+                  onerror="
+                    this.src='images/news-placeholder.jpg'
+                  "
+                />
+
+
+                <span class="news-category">
+                  BREAKING NEWS
+                </span>
+
+
+                ${imageCount}
+
+              </div>
+
+
+              <div class="news-content">
+
+                <div class="news-date">
+                  ${escapeHtml(news.date)}
+                </div>
+
+
+                <h3>
+                  ${escapeHtml(news.title)}
+                </h3>
+
+
+                <p>
+                  ${escapeHtml(news.description)}
+                </p>
+
+
+                <div class="news-footer">
+
+                  <span class="news-tag">
+                    Breaking News
+                  </span>
+
+
+                  <span class="news-link">
+                    Explore →
+                  </span>
+
+                </div>
+
+              </div>
+
+            </a>
+
+          `;
+
+        }).join("");
+
+
+      /* =================================================
+         COUNT
+      ================================================= */
+
+      newsCount.textContent =
+        `Showing ${filtered.length} update${filtered.length === 1
+          ? ""
+          : "s"
+        }`;
+
+
+      /* =================================================
+         EMPTY
+      ================================================= */
+
+      const hasNews =
+        filtered.length > 0;
+
+
+      newsGrid.style.display =
+        hasNews
+          ? ""
+          : "none";
+
+
+      newsEmpty.classList.toggle(
+        "show",
+        !hasNews
+      );
+
+
+      /* =================================================
+         TICKER
+      ================================================= */
+
+      if (filtered.length > 0) {
+
+        breakingTicker.textContent =
+          filtered[0].title;
+
+      } else {
+
+        breakingTicker.textContent =
+          "No breaking news found";
+
+      }
+
     }
 
-    filterNews();
+
+    /* ===================================================
+       SEARCH
+    =================================================== */
+
+    searchInput.addEventListener(
+      "input",
+      renderNews
+    );
+
+
+    /* ===================================================
+       INITIAL LOAD
+
+       Breaking News is ALWAYS the default category.
+    =================================================== */
+
+    renderNews();
+
   </script>
+
 </body>
 
 </html>
