@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Form Download – Brajesh Pal CSC Center</title>
+  <meta name="description"
+    content="Download PDF, Word, Excel and other useful forms and documents from Brajesh Pal CSC Center." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brajesh-pal-csc.vercel.app/pdf-forms.html" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpeg" href="csc-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --news-blue: #1a56db;
+      --news-dark: #07153d;
+      --news-bg: #f5f7fb;
+      --news-text: #172033;
+      --news-muted: #64748b;
+      --news-border: #e5e7eb;
+      --news-orange: #f97316;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--news-bg);
+      color: var(--news-text);
+    }
+
+    /* HERO */
+    .news-hero {
+      padding: 115px 0 55px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #050d1f 0%, #0a1f6e 52%, #07153d 100%);
+    }
+
+    .news-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 30%, rgba(26, 86, 219, .30), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(249, 115, 22, .16), transparent 30%);
+    }
+
+    .news-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .news-breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .60);
+    }
+
+    .news-breadcrumb a {
+      color: #ff9900;
+      text-decoration: none;
+    }
+
+    .news-hero h1 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .news-hero p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, .76);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .news-search {
+      max-width: 620px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .news-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 15px 54px 15px 20px;
+      border-radius: 50px;
+      font: inherit;
+      font-size: 14px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+    }
+
+    .news-search span {
+      position: absolute;
+      right: 19px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+
+    /* FILTER */
+    .news-filter-bar {
+      position: sticky;
+      top: 72px;
+      z-index: 40;
+      padding: 16px 0;
+      background: #0d1b3e;
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
+      box-shadow: 0 3px 18px rgba(0, 0, 0, .18);
+    }
+
+    .news-filters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .news-filter {
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 50px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, .07);
+      color: rgba(255, 255, 255, .82);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .news-filter:hover,
+    .news-filter.active {
+      background: var(--news-blue);
+      border-color: var(--news-blue);
+      color: #fff;
+    }
+
+    /* CONTENT */
+    .pdf-section {
+      padding: 35px 0 80px;
+    }
+
+    .pdf-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .pdf-toolbar h2 {
+      margin: 0;
+      font-size: 25px;
+      color: #111827;
+    }
+
+    .pdf-count {
+      color: var(--news-muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* EXACT 2-COLUMN LISTING */
+    .pdf-table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pdf-table-wrap {
+      min-width: 650px;
+      background: #fff;
+      border: 1px solid var(--news-border);
+    }
+
+    .pdf-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .pdf-table th {
+      background: #f8fafc;
+      color: #111827;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 17px 16px;
+      border-bottom: 1px solid var(--news-border);
+    }
+
+    .pdf-table th:first-child {
+      width: 43%;
+    }
+
+    .pdf-table th:last-child {
+      width: 57%;
+    }
+
+    .pdf-row td {
+      padding: 18px 16px;
+      border-bottom: 1px solid #e9edf3;
+      vertical-align: top;
+    }
+
+    .pdf-row:last-child td {
+      border-bottom: 0;
+    }
+
+    .pdf-row:hover td {
+      background: #fcfdff;
+    }
+
+    .pdf-name {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    .pdf-info {
+      min-width: 0;
+    }
+
+    .pdf-download {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: #1235b8;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 400;
+      word-break: break-word;
+    }
+
+    .pdf-download:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-download-icon {
+      flex: 0 0 auto;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .pdf-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 7px;
+      margin-left: 26px;
+    }
+
+    .pdf-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      background: #fafafa;
+      color: #333;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .pdf-empty {
+      display: none;
+      padding: 55px 20px;
+      text-align: center;
+      border: 1px dashed #cbd5e1;
+      border-radius: 18px;
+      background: #fff;
+      color: var(--news-muted);
+    }
+
+    .pdf-empty.show {
+      display: block;
+    }
+
+    .pdf-empty h3 {
+      margin: 0 0 6px;
+      color: #1e293b;
+    }
+
+    .pdf-empty p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    /* CTA */
+    .news-cta {
+      padding: 58px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0a1f6e, #1a3fad);
+    }
+
+    .news-cta h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 27px;
+    }
+
+    .news-cta p {
+      margin: 0 auto 24px;
+      color: rgba(255, 255, 255, .75);
+      font-size: 14px;
+    }
+
+    .news-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .news-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .news-btn-primary {
+      color: #fff;
+      background: var(--news-orange);
+    }
+
+    .news-btn-outline {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    @media (max-width: 620px) {
+      .news-hero {
+        padding: 100px 0 50px;
+      }
+
+      .pdf-section {
+        padding: 30px 0 60px;
+      }
+
+      .pdf-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .news-filter-bar {
+        top: 64px;
+      }
+
+      .news-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .news-filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .news-filter {
+        flex: 0 0 auto;
+      }
+
+      .pdf-table-wrap {
+        min-width: 620px;
+      }
+
+      .pdf-table th,
+      .pdf-row td {
+        padding: 15px 13px;
+      }
+
+      .pdf-name {
+        font-size: 15px;
+      }
+
+      .pdf-download {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" style="text-decoration:none;">
+        <img src="csc-logo.jpg" alt="CSC Logo" onerror="this.style.display='none'" />
+        <div>
+          <span class="logo-title">Smart Portal</span>
+          <span class="logo-sub">Common Service Centre · Madhya Pradesh</span>
+        </div>
+      </a>
+
+      <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul id="navLinks">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="latest-news.html">Latest News</a></li>
+          <li><a href="download-forms.html" style="color:var(--blue);font-weight:700;">Download</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="news-hero">
+    <div class="container news-hero-inner">
+
+      <div class="news-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>PDF Forms</span>
+      </div>
+
+      <h1>PDF Form Download</h1>
+
+      <p>
+        Download useful PDF, Word, Excel and other forms and documents
+        from Brajesh Pal CSC Center.
+      </p>
+
+      <div class="news-search">
+        <input type="search" id="newsSearch" placeholder="Search PDF / Category..." autocomplete="off"
+          aria-label="Search forms" />
+        <span>🔍</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <div class="news-filter-bar">
+    <div class="container">
+
+      <div class="news-filters" role="tablist" aria-label="Document categories">
+
+        <button class="news-filter active" data-filter="all">
+          All Forms
+        </button>
+
+        <button class="news-filter" data-filter="documents">
+          Documents
+        </button>
+
+        <button class="news-filter" data-filter="mp">
+          MP
+        </button>
+
+        <button class="news-filter" data-filter="panchayat">
+          Panchayat
+        </button>
+
+        <button class="news-filter" data-filter="education">
+          Education
+        </button>
+
+        <button class="news-filter" data-filter="formate">
+          Farmate
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOCUMENT LIST -->
+  <main class="pdf-section">
+    <div class="container">
+
+      <div class="pdf-toolbar">
+        <h2>PDF Forms</h2>
+        <span class="pdf-count" id="pdfResult">Showing 8 forms</span>
+      </div>
+
+      <div id="pdfTableWrap" class="pdf-table-scroll">
+
+        <div class="pdf-table-wrap">
+
+          <table class="pdf-table">
+
+            <thead>
+              <tr>
+                <th>हिन्दी नाम</th>
+                <th>PDF Forms</th>
+              </tr>
+            </thead>
+
+            <tbody id="pdfList"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <div class="pdf-empty" id="pdfEmpty">
+        <h3>No forms found</h3>
+        <p>Try another keyword or select a different category.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="news-cta">
+    <div class="container">
+      <h2>Need Help With a Form?</h2>
+      <p>Visit Brajesh Pal CSC Center or contact us on WhatsApp for assistance.</p>
+
+      <div class="news-cta-buttons">
+        <a href="index.html#contact" class="news-btn news-btn-primary">
+          📍 Visit / Contact Us
+        </a>
+
+        <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20form"
+          class="news-btn news-btn-outline" target="_blank" rel="noopener">
+          💬 WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div>
+        <p><strong>Brajesh Pal CSC Center</strong> — Madhya Pradesh</p>
+        <p class="footer-sub">Authorized Common Service Centre under Digital India</p>
+      </div>
+
+      <div class="footer-right">
+
+        <a href="https://wa.me/919669246329" class="wa-channel-btn" target="_blank" rel="noopener">
+          <span>💬</span> WhatsApp Channel
+        </a>
+
+        <p class="footer-copy">
+          © 2026 Brajesh Pal CSC Center. All rights reserved.
+        </p>
+
+        <p class="footer-copy" style="margin-top:4px;">
+          Website by <strong style="color:#fff;">Sotam Patel</strong> ·
+          <a href="tel:+918871025543" style="color:#94a3b8;">
+            +91 88710 25543
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/919669246329?text=Hello%2C%20I%20need%20help%20with%20a%20form" class="whatsapp-fab"
+    target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <span style="font-size:22px;">💬</span>
+    <span class="fab-text">WhatsApp Us</span>
+  </a>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+  <script>
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const header = document.getElementById("header");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      if (header) {
+        header.classList.toggle("scrolled", window.scrollY > 60);
+      }
+    });
+
+
+    /* =====================================================
+       DOCUMENT DATA
+
+       source options:
+
+       1. drive-file
+          For PDF/DOC/DOCX/XLS/XLSX/JPG/PNG/ZIP etc.
+
+       2. google-doc
+          For Google Docs. exportFormat can be:
+          docx, pdf, txt, odt, rtf, html
+
+       3. google-sheet
+          For Google Sheets. exportFormat:
+          xlsx, pdf, csv
+
+       4. google-slide
+          For Google Slides. exportFormat:
+          pptx, pdf
+    ===================================================== */
+
+    const pdfForms = [
+
+      {
+        hindi: "आधार कार्ड अपडेट फॉर्म",
+        title: "Aadhar Card Update Form",
+        categories: ["documents"],
+        tags: ["Documents"],
+        fileType: "DOCX",
+        source: "google-doc",
+        exportFormat: "docx",
+        driveFileId: "1CizYxLgry8nq1jO6F7nHopIX9hi0ypAbri69sz8ssoI"
+      },
+
+      {
+        hindi: "आधार कार्ड जन्म तिथि सुधार हेतु फॉर्म",
+        title: "Aadhar Card DOB Update Form",
+        categories: ["documents"],
+        tags: ["Documents"],
+        fileType: "DOCX",
+        source: "drive-file",
+        driveFileId: "YOUR_AADHAAR_DOB_FILE_ID"
+      },
+
+      {
+        hindi: "पेन कार्ड आवेदन एवं सुधार फॉर्म",
+        title: "Pan Card Apply / Update / Correction 49A PDF Form",
+        categories: ["documents"],
+        tags: ["Documents"],
+        fileType: "PDF",
+        source: "drive-file",
+        driveFileId: "YOUR_PAN_CARD_FILE_ID"
+      },
+
+      {
+        hindi: "समग्र आई डी से संबंधित फॉर्म",
+        title: "Samagra ID Related PDF Form",
+        categories: ["documents", "mp", "panchayat"],
+        tags: ["Documents", "MP", "Panchayat"],
+        fileType: "PDF",
+        source: "drive-file",
+        driveFileId: "YOUR_SAMAGRA_ID_FILE_ID"
+      },
+
+      {
+        hindi: "बी पी एल / राशन कार्ड फॉर्म",
+        title: "BPL Card / Ration Card PDF Form",
+        categories: ["documents", "panchayat"],
+        tags: ["Documents", "Panchayat"],
+        fileType: "PDF",
+        source: "drive-file",
+        driveFileId: "YOUR_BPL_RATION_FILE_ID"
+      },
+
+      {
+        hindi: "पात्रता पर्ची फॉर्म",
+        title: "Patrata Parchi PDF Form",
+        categories: ["documents", "mp", "panchayat"],
+        tags: ["Documents", "MP", "Panchayat"],
+        fileType: "PDF",
+        source: "drive-file",
+        driveFileId: "YOUR_PATRA_PARCHI_FILE_ID"
+      },
+
+      {
+        hindi: "शैक्षणिक प्रमाण पत्र / आवेदन फॉर्म",
+        title: "Education Related PDF Form",
+        categories: ["education"],
+        tags: ["Education"],
+        fileType: "PDF",
+        source: "drive-file",
+        driveFileId: "YOUR_EDUCATION_FILE_ID"
+      },
+
+      {
+        hindi: "कृषि एवं किसान योजना फॉर्म",
+        title: "Farmer / Agriculture PDF Form",
+        categories: ["mp", "formate"],
+        tags: ["MP", "Farmate"],
+        fileType: "DOCX",
+        source: "drive-file",
+        driveFileId: "YOUR_FARMER_FILE_ID"
+      }
+
+    ];
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const pdfList = document.getElementById("pdfList");
+    const pdfSearch = document.getElementById("newsSearch");
+    const pdfEmpty = document.getElementById("pdfEmpty");
+    const pdfResult = document.getElementById("pdfResult");
+    const pdfTableWrap = document.getElementById("pdfTableWrap");
+    const filterButtons = document.querySelectorAll(".news-filter");
+
+    let activeFilter = "all";
+
+
+    /* =====================================================
+       ESCAPE HTML
+       Prevents accidental HTML in document titles.
+    ===================================================== */
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+
+    /* =====================================================
+       CHECK FILE ID
+    ===================================================== */
+
+    function hasValidFileId(file) {
+      return !!(
+        file &&
+        file.driveFileId &&
+        !String(file.driveFileId).startsWith("YOUR_")
+      );
+    }
+
+
+    /* =====================================================
+       GET DOWNLOAD URL
+    ===================================================== */
+
+    function getDownloadUrl(file) {
+
+      if (!hasValidFileId(file)) {
+        return "#";
+      }
+
+      const id = encodeURIComponent(file.driveFileId);
+      const source = file.source || "drive-file";
+      const format = file.exportFormat || "pdf";
+
+
+      /* Google Docs */
+
+      if (source === "google-doc") {
+        return `https://docs.google.com/document/d/${id}/export?format=${encodeURIComponent(format)}`;
+      }
+
+
+      /* Google Sheets */
+
+      if (source === "google-sheet") {
+        return `https://docs.google.com/spreadsheets/d/${id}/export?format=${encodeURIComponent(format)}`;
+      }
+
+
+      /* Google Slides */
+
+      if (source === "google-slide") {
+
+        if (format === "pptx") {
+          return `https://docs.google.com/presentation/d/${id}/export/pptx`;
+        }
+
+        return `https://docs.google.com/presentation/d/${id}/export?format=${encodeURIComponent(format)}`;
+      }
+
+
+      /* Normal uploaded Drive file */
+
+      return `https://drive.google.com/uc?export=download&id=${id}`;
+    }
+
+
+    /* =====================================================
+       TAG CLASS
+    ===================================================== */
+
+    function tagClass(tag) {
+
+      const value = String(tag).toLowerCase();
+
+      if (value === "mp") return "mp";
+      if (value === "panchayat") return "panchayat";
+      if (value === "education") return "education";
+      if (value === "farmate") return "formate";
+
+      return "";
+    }
+
+
+    /* =====================================================
+       RENDER DOCUMENTS
+    ===================================================== */
+
+    function renderPDFs() {
+
+      const query = pdfSearch
+        ? pdfSearch.value.trim().toLowerCase()
+        : "";
+
+
+      const filtered = pdfForms.filter(form => {
+
+        const categoryMatch =
+          activeFilter === "all" ||
+          form.categories.includes(activeFilter);
+
+
+        const searchableText = [
+          form.hindi,
+          form.title,
+          form.fileType,
+          ...form.categories,
+          ...form.tags
+        ]
+          .join(" ")
+          .toLowerCase();
+
+
+        const searchMatch =
+          !query ||
+          searchableText.includes(query);
+
+
+        return categoryMatch && searchMatch;
+      });
+
+
+      /* Empty */
+
+      if (!filtered.length) {
+        pdfList.innerHTML = "";
+        pdfTableWrap.style.display = "none";
+        pdfEmpty.classList.add("show");
+
+        pdfResult.textContent = "Showing 0 forms";
+        return;
+      }
+
+
+      /* Show table */
+
+      pdfTableWrap.style.display = "";
+      pdfEmpty.classList.remove("show");
+
+
+      /* Rows */
+
+      pdfList.innerHTML = filtered.map(form => {
+
+        const valid = hasValidFileId(form);
+        const url = getDownloadUrl(form);
+
+        const tags = (form.tags || [])
+          .map(tag => `
+            <span class="pdf-tag ${tagClass(tag)}">
+              ${escapeHtml(tag)}
+            </span>
+          `)
+          .join("");
+
+
+        const title = escapeHtml(form.title);
+        const hindi = escapeHtml(form.hindi);
+        const type = escapeHtml(form.fileType || "FILE");
+
+
+        if (valid) {
+
+          return `
+            <tr class="pdf-row">
+
+              <td class="pdf-name">
+                ${hindi}
+              </td>
+
+              <td class="pdf-info">
+
+                <a
+                  class="pdf-download"
+                  href="${url}"
+                  rel="noopener noreferrer"
+                  title="Download ${title}"
+                >
+                  <span class="pdf-download-icon">↓</span>
+                  <span>${title}</span>
+                </a>
+
+                <div class="pdf-tags">
+                  ${tags}
+                </div>
+
+              </td>
+
+            </tr>
+          `;
+        }
+
+
+        /* Missing ID */
+
+        return `
+          <tr class="pdf-row">
+
+            <td class="pdf-name">
+              ${hindi}
+            </td>
+
+            <td class="pdf-info">
+
+              <a
+                class="pdf-download"
+                href="#"
+                data-missing-file="true"
+                data-title="${title}"
+              >
+                <span class="pdf-download-icon">↓</span>
+                <span>${title}</span>
+              </a>
+
+              <div class="pdf-tags">
+                ${tags}
+              </div>
+
+            </td>
+
+          </tr>
+        `;
+
+      }).join("");
+
+
+      /* Missing file click */
+
+      pdfList.querySelectorAll("[data-missing-file]")
+        .forEach(link => {
+
+          link.addEventListener("click", event => {
+            event.preventDefault();
+
+            const title = link.dataset.title || "This form";
+
+            alert(
+              title +
+              "\n\nGoogle Drive File ID अभी add नहीं की गई है।"
+            );
+          });
+        });
+
+
+      /* Count */
+
+      pdfResult.textContent =
+        `Showing ${filtered.length} form${filtered.length === 1 ? "" : "s"}`;
+    }
+
+
+    /* =====================================================
+       FILTERS
+    ===================================================== */
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        activeFilter = button.dataset.filter || "all";
+
+        renderPDFs();
+      });
+    });
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    if (pdfSearch) {
+      pdfSearch.addEventListener("input", renderPDFs);
+    }
+
+
+    /* =====================================================
+       INITIAL RENDER
+    ===================================================== */
+
+    renderPDFs();
+  </script>
+
+</body>
+
+</html>
