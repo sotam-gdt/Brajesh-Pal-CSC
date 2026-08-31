@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Breaking News – Brajesh Pal CSC Center</title>
-  <meta name="description" content="Breaking News and latest important updates.">
+  <meta name="description" content="Breaking News detail page.">
   <link rel="icon" type="image/jpeg" href="csc-logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -801,38 +801,52 @@
 
   <section class="hero">
     <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Breaking News</span></div>
-      <div class="hero-badge"><span class="dot"></span> BREAKING NEWS</div>
-      <h1>Breaking News &amp; Updates</h1>
-      <p>Get the latest important updates, announcements, government news and citizen service information.</p>
-      <div class="search">
-        <input id="newsSearch" type="search" placeholder="Search breaking news..." autocomplete="off">
-        <span>🔍</span>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span>
+        <a href="breaking-news.html">Breaking News</a><span>›</span>
+        <span>Details</span>
       </div>
+      <div class="hero-badge"><span class="dot"></span> BREAKING NEWS</div>
+      <h1 id="heroTitle">Breaking News</h1>
+      <p id="heroDescription">Latest important update</p>
     </div>
   </section>
 
-  <div class="breaking-bar">
-    <div class="container breaking-bar-inner">
-      <div class="breaking-label"><span>●</span> BREAKING NEWS</div>
-      <div class="ticker" id="ticker">Latest important updates</div>
-    </div>
-  </div>
-
-  <main class="section">
+  <main class="detail-section">
     <div class="container">
-      <div class="toolbar">
-        <div><span class="kicker">Latest</span>
-          <h2>Breaking News</h2>
-        </div>
-        <span class="count" id="newsCount">Showing 0 updates</span>
+
+      <a href="breaking-news.html" class="back-btn">← Back to Breaking News</a>
+
+      <div id="detailNotFound" class="not-found" style="display:none">
+        <h2>News Not Found</h2>
+        <p>This news item does not exist or the ID is invalid.</p>
+        <a href="breaking-news.html" class="back-btn" style="margin-top:15px">View Breaking News</a>
       </div>
-      <div class="grid" id="newsGrid"></div>
-      <div class="empty" id="newsEmpty">
-        <div style="font-size:38px">🔎</div>
-        <h3>No Breaking News Found</h3>
-        <p>Try another keyword.</p>
+
+      <div class="detail-layout" id="detailLayout" style="display:none">
+
+        <article class="detail-main">
+
+          <div class="detail-head">
+            <div class="date" id="detailDate"></div>
+            <h1 id="detailTitle"></h1>
+          </div>
+
+          <div class="detail-gallery" id="detailGallery"></div>
+
+          <div class="detail-body" id="detailBody"></div>
+
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h3>More Breaking News</h3>
+            <div id="relatedNews"></div>
+          </div>
+        </aside>
+
       </div>
+
     </div>
   </main>
 
@@ -867,7 +881,6 @@
 
 
   <script>
-
     const breakingNews = [
       {
         id: 1,
@@ -877,11 +890,29 @@
           "ईशानगर (छतरपुर)। छतरपुर से बीना की ओर जा रही यात्री ट्रेन से गिरकर 55 वर्षीय अधेड़ गंभीर रूप से घायल हो गए। घायल यात्री की पहचान अनवर खान (उम्र 55 वर्ष), मूल निवासी टीकमगढ़ एवं हाल निवासी नारायणपुर रोड छतरपुर के रूप में हुई है। प्राप्त जानकारी के अनुसार, ईशानगर रेलवे स्टेशन से आगे निकलते ही अनवर खान अचानक संतुलन बिगड़ने या किसी अज्ञात कारणवश चलती ट्रेन से नीचे गिर पड़े, जिससे वे ट्रैक किनारे गंभीर रूप से घायल होकर तड़पने लगे।",
         images: [
           "drive:1UbdZZPjOv3lVNG6GnvdvhRiO3ndSTwQ4"
-          // Local: "images/news-1.jpg"
-          // Normal URL: "https://example.com/news-1.jpg"
-          // Drive object: { type: "drive", id: "1UbdZZPjOv3lVNG6GnvdvhRiO3ndSTwQ4" }
         ],
+        content: `
+        <p>
+          ईशानगर (छतरपुर)। छतरपुर से बीना की ओर जा रही यात्री ट्रेन से गिरकर
+          55 वर्षीय अधेड़ गंभीर रूप से घायल हो गए। घायल यात्री की पहचान अनवर खान
+          (उम्र 55 वर्ष), मूल निवासी टीकमगढ़ एवं हाल निवासी नारायणपुर रोड छतरपुर
+          के रूप में हुई है।
 
+          प्राप्त जानकारी के अनुसार, ईशानगर रेलवे स्टेशन से आगे निकलते ही
+          अनवर खान अचानक संतुलन बिगड़ने या किसी अज्ञात कारणवश चलती ट्रेन से
+          नीचे गिर पड़े। हादसे के बाद वे ट्रैक किनारे गंभीर रूप से घायल अवस्था
+          में मिले।
+
+          घायल यात्री की पहचान अनवर खान, उम्र 55 वर्ष, के रूप में हुई है।
+          वे मूल रूप से टीकमगढ़ के निवासी हैं और वर्तमान में नारायणपुर रोड,
+          छतरपुर में निवास करते हैं।
+
+          घटना की जानकारी मिलने के बाद स्थानीय लोगों की मदद से घायल यात्री को
+          उपचार के लिए अस्पताल पहुंचाने की प्रक्रिया की गई। हादसे के कारणों की
+          पूरी जानकारी संबंधित जांच के बाद ही स्पष्ट हो सकेगी।
+
+        </p>
+      `
       }
     ];
 
@@ -915,65 +946,57 @@
       return "images/news-placeholder.jpg";
     }
 
-    const newsGrid = document.getElementById("newsGrid");
-    const searchInput = document.getElementById("newsSearch");
-    const newsCount = document.getElementById("newsCount");
-    const newsEmpty = document.getElementById("newsEmpty");
-    const ticker = document.getElementById("ticker");
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = Number(params.get("id"));
+    const news = breakingNews.find(item => item.id === requestedId);
+    const layout = document.getElementById("detailLayout");
+    const notFound = document.getElementById("detailNotFound");
 
-    function renderNews() {
-      const query = searchInput.value.trim().toLowerCase();
-      const filtered = breakingNews.filter(news => {
-        const text = [news.title, news.shortDescription, news.date, "breaking news"]
-          .join(" ").toLowerCase();
-        return !query || text.includes(query);
-      });
+    if (!news) {
+      notFound.style.display = "";
+    } else {
+      layout.style.display = "grid";
+      document.title = `${news.title} – Breaking News`;
+      document.getElementById("heroTitle").textContent = news.title;
+      document.getElementById("heroDescription").textContent = news.shortDescription;
+      document.getElementById("detailDate").textContent = news.date;
+      document.getElementById("detailTitle").textContent = news.title;
 
-      newsGrid.innerHTML = filtered.map(news => {
-        const images = Array.isArray(news.images) && news.images.length
-          ? news.images : ["images/news-placeholder.jpg"];
-        const imageUrl = getImageUrl(images[0]);
-        const imageCount = images.length > 1
-          ? `<span class="image-count">📷 ${images.length}</span>` : "";
+      const images = Array.isArray(news.images) && news.images.length
+        ? news.images : ["images/news-placeholder.jpg"];
 
-        return `
-          <a class="card" href="news-details.html?id=${encodeURIComponent(news.id)}">
-            <div class="card-image">
-              <img src="${escapeHtml(imageUrl)}"
-                   alt="${escapeHtml(news.title)}"
-                   loading="lazy"
-                   onerror="this.onerror=null;this.src='images/news-placeholder.jpg';">
-              <span class="badge">BREAKING NEWS</span>
-              ${imageCount}
-            </div>
-            <div class="card-content">
-              <div class="date">${escapeHtml(news.date)}</div>
-              <h3>${escapeHtml(news.title)}</h3>
-              <p>${escapeHtml(news.shortDescription)}</p>
-              <div class="card-footer">
-                <span class="tag">Breaking News</span>
-                <span class="explore">Explore →</span>
-              </div>
-            </div>
-          </a>`;
-      }).join("");
+      document.getElementById("detailGallery").innerHTML = images.map((image, index) => `
+      <img
+        src="${escapeHtml(getImageUrl(image))}"
+        alt="${escapeHtml(news.title)} - Image ${index + 1}"
+        loading="${index === 0 ? "eager" : "lazy"}"
+        onerror="this.onerror=null;this.src='images/news-placeholder.jpg';"
+      >
+    `).join("");
 
-      newsCount.textContent = `Showing ${filtered.length} update${filtered.length === 1 ? "" : "s"}`;
-      newsGrid.style.display = filtered.length ? "" : "none";
-      newsEmpty.classList.toggle("show", !filtered.length);
-      ticker.textContent = filtered.length ? filtered[0].title : "No breaking news found";
+      document.getElementById("detailBody").innerHTML = news.content || "";
+
+      const related = breakingNews.filter(item => item.id !== news.id).slice(0, 5);
+      document.getElementById("relatedNews").innerHTML = related.length
+        ? related.map(item => `
+          <a class="side-news" href="news-details.html?id=${encodeURIComponent(item.id)}">
+            <strong>${escapeHtml(item.title)}</strong><br>
+            <span style="color:#94a3b8">${escapeHtml(item.date)}</span>
+          </a>
+        `).join("")
+        : `<div style="color:#94a3b8;font-size:12px">No more breaking news.</div>`;
     }
 
-    document.getElementById("menuToggle").addEventListener("click", () => {
-      document.getElementById("navLinks").classList.toggle("open");
-    });
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+    }
 
     window.addEventListener("scroll", () => {
-      document.getElementById("header").classList.toggle("scrolled", window.scrollY > 60);
+      const header = document.getElementById("header");
+      if (header) header.classList.toggle("scrolled", window.scrollY > 60);
     });
-
-    searchInput.addEventListener("input", renderNews);
-    renderNews();
   </script>
 </body>
 
